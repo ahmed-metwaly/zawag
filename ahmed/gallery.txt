@@ -1,0 +1,122 @@
+﻿<!-- ******************************* section new pages********************************************** -->
+
+<div class="new-page-title">
+    <h2 class="wow fadeIn"> عنوان الصفحه
+        <p class="search-text">وصف مختصر عن الصفحه وصف مختصر عن الصفحه وصف مختصر عن الصفحه </p>
+    </h2>
+</div>
+
+
+<div class="section-new-pages"><!-- section-new-pages -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+
+                <div class="wow fadeInUp AddNewPhoto">
+                    <h5 class="Suggestions">
+                        يمكنك التواصل معنا في اي وقت في حال لديك اي استفسار او ملاحظات او شكاوي *
+                    </h5>
+
+                    <form action="" method="" class="new-form-con">
+
+                        <div class="form-group">
+                            <label> عنوان الصوره </label>
+                            <input type="text" class="form-control" placeholder="عنوان القصة ">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputFile">اضافة صوره </label>
+                            <input type="file" id="exampleInputFile">
+
+                            <p class="help-block">يمكنك رفع صوره معبره عن قصتك من خلال الضغط هنـــا .</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary pull-left">اضافة القصة</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+
+        </div>
+    </div>
+</div>
+<!-- end section-new-pages -->
+
+
+<section class="users wow fadeInUp">
+    <div class="container">
+        <h2>معرض الصور</h2>
+        <div class="user-area">
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""><img class="owl-lazy" data-src="images/user1.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""><img class="owl-lazy" data-src="images/user2.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user3.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user1.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user2.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user3.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user1.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user2.png" /></a>
+            </div>
+            <div class="item">
+                <div class="info animated  bounceInRight">
+                    <i class="fa fa-sign-out"></i>
+                    <a href="">عنوان الصورة</a>
+                </div>
+                <a href=""> <img class="owl-lazy" data-src="images/user3.png" /></a>
+            </div>
+        </div>
+        <!-- user -->
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+
+<!-- ******************************* end section new pages****************************************** -->

@@ -1,0 +1,243 @@
+header .container form input {margin-top: -15px;}
+/*start tabs*/
+/*.my-nav-tab>li>a:hover {border-color: transparent; clolor:#d11d7c; transition: all .9s ease;}*/
+/*.title-tab:hover:after {*/
+    /*content: '';*/
+    /*width: 80%;*/
+    /*height: 3px;*/
+    /*background: #5937ac;*/
+    /*position: absolute;*/
+    /*right: 11%;*/
+    /*margin-top: 25px;*/
+/*}*/
+
+.error p{
+    color: #FF0080 !important;
+    font-size: 0.9em;
+    margin-top: 2px;
+    margin-right: 9px;
+}
+
+.itemPhoto{
+    margin: 0;
+    margin-bottom: 20px;
+    float: right;
+}
+.itemPhoto input[type='checkbox'] {
+    position: absolute;
+    top: 20px !important;
+    right: 35px;
+}
+.itemPhoto img{
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.main_message{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.main_message .flash_data_ok, .main_message .flash_data_no{
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    background: #3498db;
+    position: relative;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.main_message .flash_data_no {
+    background: #e74c3c;
+    
+}
+.my-nav-tab>li.active1>.title-tab,
+.my-nav-tab>li.active1>.title-tab:focus,
+.my-nav-tab>li.active1>.title-tab:hover{color: #5937ac;}
+.nav>li>.title-tab:focus, .nav>li>.title-tab:hover {background-color: inherit;}
+.my-nav-tab>li.active1>a,
+.my-nav-tab>li.active1>a:focus,
+.my-nav-tab>li.active1>a:hover {
+
+   background-color: inherit;
+    border: none !important;
+    border-bottom-color: transparent;
+    clolor:#d11d7c;
+}
+/* edit bootstrap */
+.my-nav-tab > li > a,.my-nav-tab > li > a:hover{
+    color:#d11d7c;
+}
+.my-nav-tab > li > a {
+    border: none !important;
+    outline: none !important;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover{
+	color:#5937AC;
+}
+/**/
+.my-nav-tab {border-bottom: none;}
+.register-title {text-align: center !important;}
+p.register-text {   margin-top: 15px;}
+.my-nav-tab>li {float: right; width: auto; margin-right: 30px;}
+label.label-title {clolor:#d11d7c;}
+.form-group {margin:0 !important; margin-top: 15px;}
+.form-control {
+    line-height: 0;
+    padding: 0px 12px;
+	color: #d11d7c;
+	line-height: 2;
+	background-color: #f4f4f4;
+	border-radius: inherit;
+    border: 1px solid #f4f4f4;
+   webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+   box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+}
+.title-tab {color:#d11d7c;text-align: center;}
+.title-tab a {color: #d11d7c;text-align: center;}
+
+.my-nav-tab {margin-bottom: 35px;}
+.icon-tab {margin-right: 10px;}
+.radio-kind { margin-left: 15px !important;position: relative !important;}
+.area-use{ width: 100%;height: 65px;}
+.bnt-next { background-color: #d11d7c; color: #fff !important;  }
+.bnt-next:hover {  background-color: #5937ac;}
+.form-control:focus {border-color: #5937ac;box-shadow: inset 0 0px 0px rgba(0,0,0,0),0 0 0px rgba(0,0,0,0);}
+/*palcholder*/
+::-webkit-input-placeholder {
+   color: #d11d7c !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d11d7c !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d11d7c !important;
+}
+
+:-ms-input-placeholder {
+   color: #d11d7c !important;
+}
+/*placeholder*/
+
+/*radio*/
+.radio-info input[type="radio"]:checked + label::before,
+.radio-info input[type="checkbox"]:checked + label::before { border-color: #5937ac; }
+.radio-info input[type="radio"] + label::after,
+.radio-info input[type="checkbox"] + label::after {background-color: #d11d7c !important;}
+.radio label::before{  right: -22px;top: 5px; border: 1px solid #5937ac;}
+.radio label::after {right: -19px; top: 8px; background-color: #d11d7c}
+.radio label {margin-right: 22px;margin-left: 0px !important;}
+/*radio*/
+
+
+/*checkbox*/
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 0;
+    position: relative;
+    padding-right: 23px;
+    margin-top: -47px;
+}
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: 0;
+    top: 5px;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 0;
+    top: 5px;
+    margin-left: -20px;
+    padding-left: 0;
+    padding-right: 2px;
+    padding-top: 3px;
+    font-size: 11px;
+    color: #555555;
+}
+/*checkbox*/
+
+/*personal-img*/
+.personal-img {
+    width: 100%;
+    height: 300px;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    margin-top: 25px;
+    padding-top: 20px;
+}
+.personal-img img {margin: 0 auto;}
+.choise-img{margin: 20px 0 25px 0;}
+.img-load { margin-bottom: 18px; margin-top: 25px;}
+/*personal-img*/
+
+
+textarea.form-control {height: 150px;}
+.mail-info {}
+/*buttons*/
+.btn-prev {
+    background-color: #d11d7c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-prev:hover {background-color: #5937ac;}
+.btn-next {
+    background-color: #d11d7c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+.btn-next:hover {background-color: #5937ac;}
+/*buttons*/
+/*end tabs*/
+
+/*start media*/
+@media only screen and (max-width: 1024px) {
+  .my-nav-tab>li {margin-right: -5px;}
+  .btn-prev {margin-left: 50px;}
+  .radio.radio-inline {margin-left: -1px;}
+}
+@media only screen and (max-width: 768px) {
+  .my-nav-tab>li { margin-right: -42px;}
+  a.title-tab {font-size: 14px;}
+}
+@media only screen and (max-width: 640px) {
+.my-nav-tab>li {width: 100%; margin-bottom: 10px;}
+.my-nav-tab {margin-right:  120px;}
+ a.title-tab {font-size: 17px;}
+ .title-tab:hover:after {margin-top: 30px;}
+ .checkbox label {margin-top: -10px; margin-right: -18px;}
+}
+@media only screen and (max-width: 480px) {
+.my-nav-tab>li {width: 100%; margin-bottom: 10px;}
+.my-nav-tab {margin-right:  120px;}
+a.title-tab {font-size: 17px;}
+.title-tab:hover:after {margin-top: 30px;}
+.checkbox label { margin-right: 0px;}
+}
+@media only screen and (max-width: 360px) {
+.my-nav-tab {margin-right: 70px;}
+.my-nav-tab>li  {margin-right: -40px;}
+.icon-tab {display: none;}
+.checkbox label { margin-right: 0px; font-size: 14px;}
+}
+/*end media*/.my-nav-tab

@@ -1,0 +1,342 @@
+﻿<!-- ******************************* section new pages********************************************** -->
+
+<div class="new-page-title">
+    <h2 class="wow fadeIn"> عنوان الصفحه
+        <p class="search-text">وصف مختصر عن الصفحه وصف مختصر عن الصفحه وصف مختصر عن الصفحه </p>
+    </h2>
+</div>
+
+<div class="section-new-pages"><!-- section-new-pages -->
+<div class="container">
+<div class="row">
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+<div class="col-lg-6 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+    <div class="single-story wow fadeInUp">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- left -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>غنيمه</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+
+            </div>
+            <!-- end left -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- center -->
+                <div class="story-img">
+                    <a href=""><img src="images/user1.png" alt=""/></a>
+                </div>
+            </div>
+            <!-- end center -->
+
+            <div class="col-md-4 col-sm-4 col-xs-12"><!-- right -->
+                <div class="story-user">
+                    <h5>الإسم</h5>
+
+                    <h4>فهد العاصمي82</h4>
+
+                    <h5>العمر</h5>
+
+                    <h4>29 سنه</h4>
+
+                    <h5>دولة الأصل</h5>
+
+                    <h4>السعودية</h4>
+                </div>
+            </div>
+            <!-- end right -->
+
+        </div>
+    </div>
+</div>
+<!-- end single story -->
+
+
+</div>
+
+<div class="row">
+    <!--start nav -->
+    <nav class="new-pagination">
+        <ul class="pagination my-nav">
+            <a class="pages-nu" href="#" aria-label="Previous">
+                صفحة 1 من 1500
+            </a>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <i class="fa fa-arrow-circle-o-left"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!--end nav -->
+    <div class="clearfix"></div>
+</div>
+</div>
+</div>
+
+<!-- ******************************* end section new pages****************************************** -->
+

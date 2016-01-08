@@ -1,0 +1,112 @@
+﻿<!-- ******************************* section new pages********************************************** -->
+
+<div class="new-page-title">
+    <h2 class="wow fadeIn"> عنوان الصفحه
+        <p class="search-text">وصف مختصر عن الصفحه وصف مختصر عن الصفحه وصف مختصر عن الصفحه </p>
+    </h2>
+</div>
+
+<div class="section-new-pages"><!-- section-new-pages -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1 col-right"></div>
+            <div class="col-lg-10 com-md-6 col-sm-12 col-xs-12 block col-right"><!-- single story -->
+                <div class="single-story new-single-story wow fadeInUp">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-4 col-xs-12"><!-- left -->
+                            <div class="story-user">
+                                <h5>الإسم</h5>
+
+                                <h4>غنيمه</h4>
+
+                                <h5>العمر</h5>
+
+                                <h4>29 سنه</h4>
+
+                                <h5>دولة الأصل</h5>
+
+                                <h4>السعودية</h4>
+
+                                <h5>دولة الإقامة</h5>
+
+                                <h4>مصر</h4>
+
+                                <h5> كنت</h5>
+
+                                <h4>مطلق</h4>
+
+                                <h5> كنت أبحث عن</h5>
+
+                                <h4> زواج عادي</h4>
+                            </div>
+
+                        </div>
+                        <!-- end left -->
+
+                        <div class="col-md-6 col-sm-4 col-xs-12"><!-- center -->
+                            <div class="story-img">
+                                <a href=""><img src="images/user1.png" alt=""/></a>
+                            </div>
+                        </div>
+                        <!-- end center -->
+
+                        <div class="col-md-3 col-sm-4 col-xs-12"><!-- right -->
+                            <div class="story-user">
+                                <h5>الإسم</h5>
+
+                                <h4>غنيمه</h4>
+
+                                <h5>العمر</h5>
+
+                                <h4>29 سنه</h4>
+
+                                <h5>دولة الأصل</h5>
+
+                                <h4>السعودية</h4>
+
+                                <h5>دولة الإقامة</h5>
+
+                                <h4>مصر</h4>
+
+                                <h5> كنت</h5>
+
+                                <h4>مطلق</h4>
+
+                                <h5> كنت أبحث عن</h5>
+
+                                <h4> زواج عادي</h4>
+                            </div>
+                        </div>
+                        <!-- end right -->
+
+                        <div class="clearfix"></div>
+
+                        <h3>عنوان القصه يكتب هنـــــا .....</h3>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end single story -->
+            <div class="col-md-1 col-right"></div>
+
+        </div>
+
+        <div class="row">
+            <div class="story-content wow fadeInUp">
+                <h3>عنوان القصة</h3>
+
+                <p>
+                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
+                    الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها
+                    تعطي توزيعاَ طبيعياَ عوضاً عن استخدام
+                    هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل
+                    الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها
+                    تعطي توزيعاَ طبيعياَ عوضاً عن استخدام
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ******************************* end section new pages****************************************** -->

@@ -1,0 +1,203 @@
+
+/* section user*/
+.cover-img{
+    
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.header-user {padding: 0; padding-bottom: 40px; padding-top: 20px;}
+.img-user {   
+    width: 100%;
+    height:100%;
+    z-index: 9999;
+    margin-top: -75px;
+    border: 5px solid #fff;
+    border-radius: 25px;}
+.header-user h1 {
+    font-family: Droid Arabic Kufi;
+    font-size: 23px;
+    font-weight: bold;
+    color: #333333;
+    margin-top: 50px;
+  }
+
+.header-user p {
+    font-family: Droid Arabic Kufi;
+    font-size: 15px;
+    color: #828282;
+}
+.header-user .user-add i{
+    width: 67px;
+    height: 67px;
+    border: 1px solid #eee;
+    border-radius: 67px;
+    text-align: center;
+    line-height: 67px;
+    font-size: 22px;
+    color: #D42081;
+    transition: all 1s ease;
+    display: table;
+    margin: 0 15px 0 0;
+    float: left;
+}
+
+.like{
+    background: #D42081; color: #fff;
+}
+
+.header-user .user-add i:hover {background: #D42081; color: #fff;}
+.user-add {margin-top: 45px; width: 100%; height: 100%; display: table; }
+.user-details {padding-top: 0; padding-bottom: 0;}
+.user-info{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #eee;
+    padding: 5px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+
+.user-info ul li {margin-bottom: 10px;}
+.user-info ul li span {color: #d42081;}
+
+/* section user*/
+
+/*start tabs*/
+.panel-group .panel-heading+.panel-collapse>.list-group, .panel-group .panel-heading+.panel-collapse>.panel-body{
+    border-top: none;
+    border: 2px solid #eee;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 10px;
+}
+.panel-group .panel {
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.tab1-head {
+  background-color: #5c36aa;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 17px; 
+  color: #fff;
+}
+.tab1-head a:active, a:hover {text-decoration: none;}
+.tab2-head {
+  background-color: #d42081;
+  height: 50px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 17px;
+  color: #fff;
+}
+.tab2-head a:active, a:hover {text-decoration: none;}
+.tab1-head i {top: 5px; right: 5px;}
+.tab2-head i {top: 5px; right: 5px;}
+/*end tabs*/
+
+
+/*start media Guery*/
+@media only screen and (max-width: 768px) {
+ 
+ .user-add {margin-top: 0; margin-bottom: 15px;}
+ .header-user .user-add i {margin-bottom: 8px;}
+}
+
+@media only screen and (max-width: 640px) {
+ .img-user { display: table; margin: -75px auto 0; width: auto;}
+ .user-add {
+       margin-right: -30px; margin-top: -75px;
+ }
+ .info-user {
+    margin-top: -40px;
+}
+}
+@media only screen and (max-width: 480px) {
+ 
+ .user-add { margin-right: 0;}
+ .header-user p {font-size: 14px;}
+}
+@media only screen and (max-width: 360px) {
+  .header-user h1 {text-align: center;}
+ .header-user p {font-size: 14px; text-align: center;}
+ .user-add {margin-top: 15px; margin-right: -65px;}
+}
+/*start media Guery*/
+
+
+.col-right {
+    float: right;
+}
+
+.col-left {
+    float: left;
+}
+
+.section-new-pages {
+    min-height: 150px;
+    background: #fff;
+    padding: 50px 0;
+}
+
+.new-page-title {
+    padding: 50px;
+    text-align: center;
+}
+
+.new-right-section {
+    padding: 0 0 40px 30px;
+}
+
+.single-like {
+    padding: 20px;
+    height: 260px;
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(204, 204, 204, 0.06);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.13);
+
+}
+
+.single-like-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff;
+    margin: auto;
+    overflow: hidden;
+}
+
+.single-like-photo img {
+    width: 100%;
+    height: 100%;
+}
+
+.single-like h4 a {
+    font-size: 18px;
+    color: #45619D;
+}
+
+.new-title {
+    font-size: 19px;
+    border-bottom: 1px solid #ff0080;
+    padding-bottom: 17px;
+    color: #ff0080;
+    margin-bottom: 35px;
+}
+
+.Suggestions {
+    margin-bottom: 30px;
+    line-height: 30px;
+}
+
+.new-form-con label {
+    font-size: 15px;
+}
+.AddNewPhoto{
+    background: #F9F9F9;
+    padding: 35px;
+    overflow: hidden;
+}

@@ -1,0 +1,254 @@
+/*===================================================================================
+======== style questions
+====================================================================================*/
+.all-questions {
+    background: #F9F9F9;
+    padding: 40px;
+}
+
+.all-questions h3 {
+    margin-bottom: 30px;
+    color: #ff0080;
+}
+
+.first-questions {
+    border: 1px solid #DDD;
+    border-radius: 9px;
+    padding: 35px;
+    margin-bottom: 30px;
+}
+
+.new-page-title p {
+    font-size: 16px !important;
+}
+
+.new-page-title {
+}
+
+.new-pagination {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.single-story {
+    border: 2px solid #EEE;
+    height: 270px;
+    width: 100%;
+    padding: 60px 10px 30px 10px;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.single-story:before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url("../images/heart_big.png");
+    position: absolute;
+    top: -40px;
+    right: 43%;
+
+}
+
+.single-story h4 {
+    color: #ff0080;
+}
+
+.story-img {
+    text-align: center;
+    height: 165px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.story-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.story-user {
+    text-align: center;
+}
+
+.new-single-story {
+    height: 570px;
+}
+
+.new-single-story::before {
+    content: "";
+    right: 46%;
+}
+
+.new-single-story h3 {
+    text-align: center;
+    padding: 16px 0;
+}
+
+.new-single-story .story-img {
+    height: 400px;
+}
+
+.new-single-story h4 {
+    margin-bottom: 20px;
+}
+
+.story-content {
+    background: #fff;
+    padding: 50px;
+    border: 2px solid #EEE;
+}
+
+.story-content h3 {
+    font-size: 24px;
+    border-bottom: 1px solid;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+.paypal {
+    width: 450px;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+    border: 1px solid;
+
+}
+
+.paypal img {
+    width: 100%;
+    height: auto;
+
+}
+
+.all-methods .nav-tabs > li {
+    float: right;
+}
+
+.all-methods .nav-tabs li a {
+
+    position: relative;
+    display: block;
+    padding: 18px 30px;
+    font-size: 18px;
+
+}
+
+.all-methods .tab-content {
+    padding: 30px 0;
+}
+
+.selectmethod {
+    margin-bottom: 30px;
+}
+
+.single-method-payment-1, .single-method-payment-2, .single-method-payment-3 {
+    border: 2px solid #EEE;
+    height: 135px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.single-method-payment-1 {
+    padding: 30px;
+}
+
+.single-method-payment-3 {
+    padding: 40px;
+}
+
+.single-method-payment-3 .puy-now {
+    padding: 10px 75px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.de-method {
+    color: #337AB7;
+}
+
+.section-payment {
+    background: #F9F9F9;
+    padding: 30px;
+}
+
+.paymentinfo {
+    padding: 30px 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .single-story {
+        height: 280px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .new-single-story {
+        height: auto;
+    }
+
+    .section-payment {
+        padding: 30px 0;
+    }
+
+    .single-method-payment-3 .puy-now {
+        padding: 10px 42px;
+    }
+
+    .all-methods .nav-tabs li a {
+        font-size: 16px;
+    }
+
+    .single-method-payment-2 img {
+        height: 100%;
+    }
+
+    .single-method-payment-1 h4 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .single-story {
+        height: auto;
+    }
+
+    .story-img {
+        height: auto;
+        width: 50%;
+        margin: auto;
+    }
+
+    .new-single-story .story-img {
+        width: 90%;
+    }
+
+    .single-method-payment-2 img {
+        height: 100%;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .all-methods .nav-tabs li a {
+        padding: 18px 15px;
+    }
+
+    .paypal {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .single-story:before {
+        content: '';
+        right: 38%;
+    }
+
+    .all-methods .nav-tabs li a {
+        padding: 18px 120px;
+        font-size: 14px;
+    }
+}
+

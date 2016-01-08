@@ -1,0 +1,251 @@
+/*start menu*/
+section.menu {
+	padding-top: 60px;
+	background: url(../images/header.png) no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 195px;}
+.my-navbar-default {background-color: inherit; border-color: transparent; border-radius: 0; }
+.my-nav li {float: right; margin-left: 20px;}
+.navbar-default .navbar-nav>li>a{color: #fff;}
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {background-color: inherit; color: #FED61F; }
+
+.navbar-default
+.navbar-nav>li>a:focus,
+.navbar-default
+.navbar-nav>li>a:hover {color: #FED61F;}
+.navbar-right {margin-right: 0px;}
+i.ic-menu{display: table; margin: 0 auto; margin-bottom: 10px;}
+
+.dropdown, .dropup {float: left; width: 100%;}
+.dropdown-menu-user {right: 0; float: right;}
+.dropdown-menu-user li {float: right; width: 100%;}
+.dropdown-menu-user li a{float: right;}
+/*progres bar*/
+a.dropdown-toggle {color: #FED61F;}
+.user-drop { margin-top: 10px; margin-left: -45px;}
+.progress-bar.active, .progress.active .progress-bar{float: right;}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {color: #CD1D7C; background-color: inherit;}
+/*progres bar*/
+/*start img person*/
+.img-person {padding: 30px;}
+.ul-img li {float: right;}
+.radio-cir-online {
+	position: absolute;
+    background-color: #6AE26A;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-right: 25px;
+}
+.radio-cir-offline {
+	position: absolute;
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-right: 25px;
+
+}
+/*end img person*/
+/*start blocks-person*/
+.blocks-person{padding-top: 30px;}
+.block-per {width: 100%; height: 100%; margin-bottom: 15px; background-color: #f0e9db;}
+.title-block-per {
+    background-color: #CF2082;
+    font-size: 17px;
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+.block-massage {
+    height: 290px;
+    width: 100%;
+    background-color: #f0e9db;
+}
+.block-massage .btn-block {margin-top: 0px;}
+.block-new-relation {
+	height: 290px;
+    width: 100%;
+    background-color: #f0e9db;
+}
+.title-re {display: block;}
+.link-re{color: #CF2082}
+.link-re:hover {color: #5937AB;}
+.body-block-per h3 {padding: 10px;}
+.body-block-per p {padding: 10px;}
+.block-1 {margin-top: 10px;}
+/*checkbox*/
+.checkbox label {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 0;
+    position: relative;
+    padding-right: 23px;
+    margin-top: 0px;
+}
+.checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: 0;
+    top: 5px;
+    margin-left: -20px;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+}
+.checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 0;
+    top: 5px;
+    margin-left: -20px;
+    padding-left: 0;
+    padding-right: 2px;
+    padding-top: 3px;
+    font-size: 11px;
+    color: #555555;
+}
+/*checkbox*/
+.form-control:focus {border-color: #5937ac;box-shadow: inset 0 0px 0px rgba(0,0,0,0),0 0 0px rgba(0,0,0,0);}
+.form-group {margin: 10px;}
+.form-control {
+    line-height: 0;
+    padding: 0px 12px;
+	color: #d11d7c;
+	line-height: 2;
+	background-color: #f4f4f4;
+	border-radius: inherit;
+    border: 1px solid #f4f4f4;
+   webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+   box-shadow: inset 0 1px 1px rgba(0,0,0,.0);
+}
+.btn-block {border-radius: 0; padding: 10px;}
+/*palcholder*/
+::-webkit-input-placeholder {
+   color: #d11d7c !important;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #d11d7c !important;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #d11d7c !important;
+}
+
+:-ms-input-placeholder {
+   color: #d11d7c !important;
+}
+/*placeholder*/
+
+/*end blocks-person*/
+/*end menu*/
+.p-toggle {
+    margin: 0;
+    font-size: 17px;
+    font-family: Droid Arabic Kufi;
+    float: left;
+    margin-top: -19px;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {background-color: #CF2082;}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {color: #fff;}
+.p-toggle {margin-top: -23px;}
+.navbar-default .navbar-toggle {padding-top: 13px;}
+
+/*start media*/
+@media only screen and (max-width: 1024px) {
+  .navbar-right {width: 50%;}
+  .ul-img li { margin-right: 40px;}
+@media only screen and (max-width: 768px) {
+  .my-nav li {margin-left: 0px;}
+  .img-logo {margin-top: 20px;}
+  .ul-img li { margin-right: 0px;}
+}
+@media only screen and (max-width: 640px) {
+.ul-img li { margin-right:-19px;}
+section.menu{padding-top: 30px !important;}
+.navbar-toggle {float: left; margin-right: -45px; margin-top: 40px;}
+.user-drop {margin-left: 0; width: 50%;}
+.navbar-right {float: right;}
+.my-nav li {margin-left: -10px;}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {overflow: visible;}
+}
+@media only screen and (max-width: 640px) {
+.user-drop {margin-left: -30px;}
+.navbar-default .navbar-toggle {
+    border-color: #FFF;
+    width: 30%;
+    margin-left: 0px;
+    margin-top: -50px;
+    background-color: #fff;
+    color: #CF2082;
+}
+}
+@media only screen and (max-width: 480px) {
+    .navbar-default .navbar-collapse,
+    .navbar-default .navbar-form {
+        overflow: visible;
+        z-index: 9999;
+        position: relative;
+        background-color: #CF2082;
+    }
+
+    .my-nav li {
+        float: right;
+    }
+
+    .my-nav li {
+        clear: right;
+    }
+
+    .user-drop {
+        margin-left: -20px;
+    }
+
+    .navbar-default .navbar-toggle {
+        width: 40%;
+        margin-left: -7px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .navbar-default .navbar-toggle {
+        border-color: #FFF;
+        width: 60%;
+        margin-left: 60px;
+        margin-top: 0;
+        background-color: #fff;
+        color: #CF2082;
+        padding-top: 13px;
+    }
+
+    .p-toggle {
+        margin-top: -23px;
+    }
+}
+
+
+}
+
+.likeIn{
+    background: #D42081 !important;
+    color: #fff !important;
+}
+
+#likeTo{
+    cursor: pointer;
+}
+/*start media*/

@@ -1,0 +1,200 @@
+﻿<!-- ******************************* section new pages********************************************** -->
+
+<div class="new-page-title">
+    <h2 class="wow fadeIn"> عنوان الصفحه
+        <p class="search-text">وصف مختصر عن الصفحه وصف مختصر عن الصفحه وصف مختصر عن الصفحه </p>
+    </h2>
+</div>
+
+
+<div class="section-new-pages"><!-- section-new-pages -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 col-xs-12 col-right">
+                <div class="new-right-section">
+                    <h3 class="new-title">أعجبت بى </h3>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-right">
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-left">
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xs-12 col-left">
+                <div class="new-right-section">
+                    <h3 class="new-title">المعجبون بى </h3>
+
+                    <div class="row">
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-right">
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-left">
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                            <div class="single-like wow fadeInUp"><!-- single-like -->
+                                <div class="single-like-photo">
+                                    <a href=""><img src="images/bg-5.png" alt=""/></a>
+                                </div>
+                                <h4><a href="">اسم الشخص هنا</a></h4>
+                                <span>25 سنه</span>
+                            </div>
+                            <!-- end single-like -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end section-new-pages -->
+
+
+<!-- ******************************* end section new pages****************************************** -->
