@@ -203,8 +203,15 @@ class Dsw_model extends CI_Model {
         return $active + $acountDone + $photo + $about + $SocialPosition + $alomPhotos;
     } 
 
-
-    public function isOnline() {
+    // get pages ads
+    
+    public function getPagesAds() {
+        $this->db->select('*');
+        $this->db->from('ads');
+        $this->db->where('ads_size', '262');
+        $this->db->limit(0, 5);
+        $this->db->order_by('ads_id', 'desc');
+        return $this->db->get()->result_array();
         
     }
 

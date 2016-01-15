@@ -78,3 +78,9 @@ section .block{
     overflow: hidden;
 }
 
+.single-adv {
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.single-adv img{height:100%}

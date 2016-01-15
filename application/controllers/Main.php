@@ -17,7 +17,6 @@ class Main extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->load->library("pagination");
-        
     }
 
 
@@ -218,6 +217,7 @@ class Main extends CI_Controller {
         $data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
         $data['uri']        = $this->uri;
         $data['session']    = $this->session;
+        $data['sideAds']    = $this->Dsw_model->getPagesAds();
         $this->load->view('site/faqs', $data);
     }
 
@@ -228,6 +228,7 @@ class Main extends CI_Controller {
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;
     	$data['session']    = $this->session;
+        $data['sideAds']    = $this->Dsw_model->getPagesAds();
     	$this->load->view('site/warning', $data);
     }
     
@@ -237,6 +238,7 @@ class Main extends CI_Controller {
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;
     	$data['session']    = $this->session;
+        $data['sideAds']    = $this->Dsw_model->getPagesAds();
     	$this->load->view('site/privacy', $data);
     }
     
@@ -251,6 +253,7 @@ class Main extends CI_Controller {
         $data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
         $data['uri']        = $this->uri;
         $data['session']    = $this->session;
+        $data['sideAds']    = $this->Dsw_model->getPagesAds();
         $this->load->view('site/pages', $data);
 
     }
@@ -263,6 +266,7 @@ class Main extends CI_Controller {
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;
     	$data['session']    = $this->session;
+        $data['sideAds']    = $this->Dsw_model->getPagesAds();
     	$this->load->view('site/terms', $data);
     }
     
