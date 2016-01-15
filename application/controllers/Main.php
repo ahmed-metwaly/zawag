@@ -199,7 +199,7 @@ class Main extends CI_Controller {
         $this->db->where('ss_id', $id);
         $this->db->join('users_register' , 'success_stories.ss_to_ur_id = users_register.ur_id', 'left');
         $to = $this->db->get()->row();
-	$data['title'] = $to->ss_name;
+	@$data['title'] = $to->ss_name;
         $data['viewStory'] = $from;
         $data['to'] = $to;
         $sittings = $this->Dsw_model->getAll('sittings', 'row');
