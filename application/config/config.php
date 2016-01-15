@@ -525,6 +525,3 @@ $views = dirname(__DIR__);
 $app = dirname($views);
 define('UPLOAD_FILE', dirname($views) . DIRECTORY_SEPARATOR . 'upload' . DIRECTORY_SEPARATOR );
 
-
-
-

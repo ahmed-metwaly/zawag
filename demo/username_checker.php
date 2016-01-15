@@ -5,4 +5,7 @@ if ($username == 'user1' || $username == 'user2') {
 } else {
 	echo json_encode(array('status' => 'ERROR', 'message' => 'Username <b>' . $username . '</b> is not available. Please choose another one.'));
 }
+
 ?>
+
+
