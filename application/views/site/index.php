@@ -136,6 +136,7 @@
                             <option value="زواج تعدد">زواج تعدد</option>
                             <option value="تعارف وتواصل">تعارف وتواصل</option>
                             <option value="صداقة عبر النت">صداقة عبر النت</option>
+                            <option value="زواج مسيار">زواج مسيار</option>
                         </select>
                     </div>
                     <div class="clearfix"></div>
