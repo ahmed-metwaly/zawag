@@ -472,7 +472,7 @@ class DashBord extends CI_Controller {
 
     private function paypal_go($price, $id){
        
-        $config['business']             = 'ahmedphp15@gmail.com';
+        $config['business']             = 'majeed7180@hotmail.com';
         $config['cpp_header_image']     = ''; //'Image header url [750 pixels wide by 90 pixels high]';
         $config['return']               = base_url()."dashbord/addDone/$id";
         $config['cancel_return']        = base_url()."dashbord/cancel";
