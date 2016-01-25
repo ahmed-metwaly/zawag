@@ -232,8 +232,10 @@ class Register extends CI_Controller {
         $emil = $this->db->get()->row();
         
         if($this->session->userdata('userEmail') != null) {
-            $this->Register_model->sendActivation($emil->si_site_email, $this->session->userdata('userEmail'), $this->session->userdata('userName'));
-            $data['message'] = 'تفقد بريدك الالكترونى';
+            if($this->Register_model->sendActivation($emil->si_site_email, $this->session->userdata('userEmail'), $this->session->userdata('userName'))){
+                $data['message'] = 'تفقد بريدك الالكترونى';
+            }
+            
         } else {
             $data['message'] = 'تم انتهاء الجلسه. يرجى المحاولة مره اخرى';
         }

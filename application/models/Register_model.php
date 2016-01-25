@@ -1,35 +1,30 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: develop software
  * Date: 11/28/2015
  * Time: 9:41 AM
  */
-
-
 class Register_model extends Dsw_model {
 
     private $tableName = 'users_register';
 
-    public function __construct(){
+    public function __construct() {
         parent::__construct();
         $this->load->library('email');
         $this->load->library('session');
         $this->load->helper('cookie');
     }
 
-
     public function hashPassword($password) {
-        $salt = md5(sha1(crc32($password. '+_)gNn87wd')));
+        $salt = md5(sha1(crc32($password . '+_)gNn87wd')));
         return md5(hash('SHA256', $salt . $password, true));
     }
 
-
-    public function sessionExist($session){
+    public function sessionExist($session) {
         return $this->session->userdata($session);
     }
-
-
 
     private function htmlEmailSend($url, $name) {
         $html = '
@@ -175,7 +170,7 @@ p, ul, ol {
                             <tr>
                                 <td align="center">
                                     <p>
-                                        <a href="http://www.azq1.com/1-zawag/register/validateActive/' . $url .'" class="button"> فعل الان</a>
+                                        <a href="http://www.azq1.com/1-zawag/register/validateActive/' . $url . '" class="button"> فعل الان</a>
                                     </p>
                                 </td>
                             </tr>
@@ -207,36 +202,46 @@ p, ul, ol {
 </html>';
 
         return $html;
-
     }
 
     public function sendActivation($mailFrom, $mailTo, $name) {
 
-        $config = Array(
-            'protocol'  => 'smtp',
-            'smtp_port' => 465,
-            'mailtype'  => 'html', 
-            'charset' => 'utf-8',
-            'wordwrap' => TRUE
+//        $config = Array(
+//            'protocol' => 'smtp',
+//            'smtp_port' => 465,
+//            'mailtype' => 'html',
+//            'charset' => 'utf-8',
+//            'wordwrap' => TRUE
+//        );
 
-        );
+
 
         $active = md5(uniqid($mailTo));
-        $this->createSession(array('emailActive' => $active ));
-
-        $this->load->library('email', $config);
-        $this->email->from($mailFrom);
-        $this->email->to($mailTo);
-        $this->email->subject('تفعيل الحساب');
-        $this->email->message($this->htmlEmailSend($active, $name));
-        $this->email->set_alt_message('خطا فى الارسال اعد المحاولة مره اخرى');
-
-        //$this->email->set_newline("\r\n"); // require this, otherwise sending via gmail times out
-
-        return $this->email->send() ? TRUE : FALSE;
+        $this->createSession(array('emailActive' => $active));
+        $this->load->library('email', array('mailtype' => 'html'));
         
+        $config['charset'] = 'utf-8';
+        $this->email->from($mailFrom, 'Stansera');
+        $this->email->to($mailTo);
+        $this->email->subject('تفعيل الحساب | مسلم زواج');
+        $this->email->message($this->htmlEmailSend($active, $name));
+        $message = $this->input->post('email_content');
+       
+        return $this->email->send() ? TRUE : FALSE;
 
 
+
+       
+//        $this->load->library('email', $config);
+//        $this->email->from($mailFrom);
+//        $this->email->to($mailTo);
+//        $this->email->subject('تفعيل الحساب');
+//        $this->email->message($this->htmlEmailSend($active, $name));
+//        $this->email->set_alt_message('خطا فى الارسال اعد المحاولة مره اخرى');
+//
+//        //$this->email->set_newline("\r\n"); // require this, otherwise sending via gmail times out
+
+        
     }
 
     public function createSession($data = array()) {
@@ -244,23 +249,14 @@ p, ul, ol {
     }
 
     public function activationTrue() {
-       return $this->uri->segment(3) === $this->session->userdata('emailActive') ? true : false;
+        return $this->uri->segment(3) === $this->session->userdata('emailActive') ? true : false;
     }
 
     public function addUser($userData = array(), $sessionData = array()) {
-        if($this->add($this->tableName, $userData)) {
+        if ($this->add($this->tableName, $userData)) {
             $this->createSession($sessionData) ? TRUE : FALSE;
         }
         return FALSE;
     }
-
-
-
-
-
-
-
-
-
 
 }
