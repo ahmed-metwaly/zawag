@@ -75,7 +75,7 @@
                                     {$paypalData[$i]['pp_price']}
                                 </td>
                                 <td>
-                                    <a href='Admin/usersIsAcountDone/{$paypalData[$i]['e_id']}/?action=delete'><i class='fa fa-trash-o fa-2x'></i></a>
+                                    <a href='Admin/usersIsAcountDone/{$paypalData[$i]['c_id']}/?action=delete'><i class='fa fa-trash-o fa-2x'></i></a>
                                 </td>
 
                             </tr>

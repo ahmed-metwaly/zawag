@@ -214,20 +214,32 @@ p, ul, ol {
 //            'wordwrap' => TRUE
 //        );
 
+            $this->load->library('email');
+
+            $config['protocol']    = 'smtp';
+            $config['smtp_host']    = 'localhost';
+            $config['smtp_port']    = '25';
+            $config['smtp_timeout'] = '7';
+            $config['smtp_user']    = 'welcome@muslimsmarry.com';
+            $config['smtp_pass']    = 'dnN}WNK#AsyZ';
+            $config['charset']    = 'utf-8';
+            $config['newline']    = "\r\n";
+            $config['mailtype'] = 'text'; // or html
+            $config['validation'] = TRUE; 
+            $config['mailtype'] = 'html';
+            $config['wordwrap'] = true;
+            $this->email->initialize($config);
 
 
-        $active = md5(uniqid($mailTo));
-        $this->createSession(array('emailActive' => $active));
-        $this->load->library('email', array('mailtype' => 'html'));
-        
-        $config['charset'] = 'utf-8';
-        $this->email->from($mailFrom, 'Stansera');
-        $this->email->to($mailTo);
-        $this->email->subject('تفعيل الحساب | مسلم زواج');
-        $this->email->message($this->htmlEmailSend($active, $name));
-        $message = $this->input->post('email_content');
-       
-        return $this->email->send() ? TRUE : FALSE;
+
+            $active = md5(uniqid($mailTo));
+            $this->createSession(array('emailActive' => $active));
+            $this->email->from($mailFrom, 'Stansera');
+            $this->email->to($mailTo);
+            $this->email->subject('تفعيل الحساب | مسلم زواج');
+            $this->email->message($this->htmlEmailSend($active, $name));
+
+            return $this->email->send() ? TRUE : FALSE;
 
 
 
