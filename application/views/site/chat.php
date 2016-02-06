@@ -26,7 +26,7 @@ if(isset($error) && $error != '') {?>
             </div>
 
             <div class="post-btn">
-                <button type="submit" name="sendMessage" class="btn btn-primary">ارســـال</button>
+                <button type="submit" name="sendMessage" class="btn btn-primary"><?php echo $sittings['sendChat']; ?></button>
             </div>
         </form>
     </div>

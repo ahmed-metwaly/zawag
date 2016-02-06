@@ -5,7 +5,7 @@
 <div class="container paypal_data center-block">
 	<table class="table table-condensed">
 		<tr class="warning">
-			<td class="text-center">لم يتم التسجيل</td>
+			<td class="text-center"><?php echo $sittings['cansel']; ?></td>
 		</tr>
 	</table>
 </div>

@@ -78,7 +78,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">ترقية الحساب</h4>
+        <h4 class="modal-title" id="exampleModalLabel"> <?php echo $sittings['progressUpgradProfile']; ?> </h4>
       </div>
       <div class="modal-body">
         <form action="" method="post">
@@ -91,11 +91,11 @@
 
                      <div class="col-lg-12 col-md-12 col-sm-8 col-xs-12" style="visibility: visible; animation-name: none;">
                         <div class="block-per">
-                             <div class="title-block-per">ترقية الحساب</div>
+                             <div class="title-block-per"><?php echo $sittings['progressUpgradProfile']; ?></div>
                              <div class="body-block-per">
-                              <h3>ترقية حسابك الأن</h3>
-                              <p>يجب ترقية الحساب لكى تتمكن من المراسلة</p>
-                             <a href="<?php echo HOST_NAME . 'dashbord/paypal/' ?>" class="btn btn-success btn-block col-lg-12">رقى حسابك الان</a>
+                              <h3><?php echo $sittings['upgradNow']; ?></h3>
+                              <p><?php echo $sittings['updateAcount'] ; ?></p>
+                             <a href="<?php echo HOST_NAME . 'dashbord/paypal/' ?>" class="btn btn-success btn-block col-lg-12"><?php echo $sittings['upgradeBtn']; ?></a>
                              </div>
                              <div class="clearfix"></div>
                          </div>
@@ -108,7 +108,7 @@
        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $sittings['imageCansel']; ?></button>
       </div>
        </form>
     </div>
@@ -124,19 +124,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">رسالة جديده</h4>
+        <h4 class="modal-title" id="exampleModalLabel"><?php echo $sittings['mNewMessage']; ?></h4>
       </div>
       <div class="modal-body">
         <form action="" method="post">
           <div class="form-group">
-            <label for="message-text" class="control-label">الى : <?php echo $usersRegister['ur_name']; ?></label>
+            <label for="message-text" class="control-label"> <?php echo $sittings['mTo']; ?> : <?php echo $usersRegister['ur_name']; ?></label>
             <textarea class="form-control" name="text" rows="6" id="message-text"></textarea>
           </div>
        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">الغاء</button>
-        <button type="submit" name="sendMessage" class="btn btn-primary">ارسال</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $sittings['mClose']; ?></button>
+        <button type="submit" name="sendMessage" class="btn btn-primary"><?php echo $sittings['mSend']; ?></button>;
       </div>
        </form>
     </div>
@@ -161,26 +161,26 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pull-right">
                     <ul class="list-unstyled user-info-2">
 
-                    <li>الجنسية : <span><?php echo $usersRegister['ur_country']; ?></span></li>
-                    <li>بلد الإقامة : <span><?php echo $usersRegister['ur_country_stay']; ?></span></li>
-                    <li>نوع الزواج : <span><?php echo $usersRegister['ur_target']; ?></span></li>
-                    <li>الحالة الإجتماعية : <span><?php echo $usersSocialPosition['usp_family_status']; ?></span></li>
-                    <li>العمر : <span><?php echo $usersRegister['ur_age']; ?> سنة</span></li>
-                    <li> الاطفال : <span><?php echo $usersSocialPosition['usp_want_children']; ?></span></li>
-                    <li> الوزن : <span><?php echo $usersSocialPosition['usp_weight']; ?> كم</span></li>
-                    <li>الطول <span><?php echo $usersSocialPosition['usp_height']; ?> سم</span></li>
+                    <li> <?php echo $sittings['pNation']; ?> : <span><?php echo $contry[$usersRegister['ur_country']]; ?></span></li>
+                    <li> <?php echo $sittings['pCountry']; ?> : <span><?php echo $contryp[$usersRegister['ur_country_stay']]; ?></span></li>
+                    <li> <?php echo $sittings['pTarget'] ; ?> : <span><?php echo $target[$usersRegister['ur_target']]; ?></span></li>
+                    <li> <?php echo $sittings['pFamly']; ?> : <span><?php echo $sittings['registerUserDataFamlyCrant'][$usersSocialPosition['usp_family_status']]; ?></span></li>
+                    <li> <?php echo $validation['filedsAge']; ?> : <span><?php echo $usersRegister['ur_age']; ?> <?php echo $sittings['year']; ?> </span></li>
+                    <li> <?php echo $sittings['p_children']; ?>  : <span><?php echo $sittings['registerUserDataChldrnCrant'][$usersSocialPosition['usp_want_children']]; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataWidth']; ?>  : <span><?php echo $usersSocialPosition['usp_weight']; ?>  <?php echo $sittings['pWigth']; ?></span></li>
+                    <li> <?php echo $sittings['Ptol']; ?> <span><?php echo $usersSocialPosition['usp_height']; ?> <?php echo $sittings['pTool']; ?> </span></li>
                 </ul>
                 </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  pull-left">
                     <ul class="list-unstyled user-info-1">
-                    <li>لون البشرة : <span><?php echo $usersSocialPosition['usp_skin_color']; ?></span></li>
-                    <li>بنية الجسم : <span><?php echo $usersSocialPosition['usp_physique']; ?></span></li>
-                    <li>العمل : <span><?php echo $usersSocialPosition['usp_work_field']; ?></span></li>
-                    <li>المؤهل التعليمي : <span><?php echo $usersSocialPosition['usp_learn']; ?></span></li>
-                    <li>الحالة المادية : <span><?php echo $usersSocialPosition['usp_physical_condition']; ?></span></li>
-                    <li>الدخل الشهري : <span><?php echo $usersSocialPosition['usp_monthly_income']; ?>$</span></li>
-                    <li>الحالة الصحية : <span><?php echo $usersSocialPosition['usp_health_status']; ?></span></li>
-                    <li>الالتزام الديني : <span><?php echo $usersSocialPosition['usp_religious_commitment']; ?></span></li>
+                    <li> <?php echo $sittings['pSken']; ?> : <span><?php echo $usersSocialPosition['usp_skin_color']; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataBody']; ?> : <span><?php echo $sittings['registerUserDataBodyCrant'][$usersSocialPosition['usp_physique']]; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataWork']; ?> : <span><?php echo $sittings['registerUserDataWorkCrant'][$usersSocialPosition['usp_work_field']]; ?></span></li>
+                    <li> <?php echo $sittings['pLCat']; ?> : <span><?php echo $sittings['pLCatCrant'][$usersSocialPosition['usp_learn']]; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataMonyCase']; ?> : <span><?php echo $sittings['registerUserDataMonyCaseCrant'][$usersSocialPosition['usp_physical_condition']]; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataSalry']; ?> : <span><?php echo $sittings['registerUserDataSalryCrant'][$usersSocialPosition['usp_monthly_income']]; ?>$</span></li>
+                    <li> <?php echo $sittings['registerUserDataHealth']; ?> : <span><?php echo $sittings['registerUserDataHealthCrant'][$usersSocialPosition['usp_health_status']]; ?></span></li>
+                    <li> <?php echo $sittings['registerUserDataReligious']; ?> : <span><?php echo $sittings['registerUserDataReligiousCrant'][$usersSocialPosition['usp_religious_commitment']]; ?></span></li>
 
                    
                 </ul>
@@ -201,7 +201,7 @@
                       <h4 class="panel-title">
                         
                         <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-المواصفات التى ابحث عنها
+                            <?php echo $sittings['pMySearch']; ?>
                         </a>
                         <i class="glyphicon glyphicon-menu-up"></i>
                       </h4>
@@ -218,7 +218,7 @@
                       <h4 class="panel-title">
                         
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                         بالنسبة إلى نفسي
+                         <?php echo $sittings['pYourSearch']; ?>
                         </a>
                         <i class="glyphicon glyphicon-menu-down"></i>
                       </h4>
@@ -237,8 +237,6 @@
 
                 </div>
 
-            
-
         </div>
 
     </div>
@@ -247,14 +245,14 @@
 <div class="clearfix"></div>
 <section class="users wow fadeInUp">
     <div class="container">
-        <h2>البوم الصور</h2>
+        <h2><?php echo $pagesTitle['DashBordPhotos']; ?></h2>
         <div class="user-area">
             <?php
             for($i = 0; $i < count($photos); $i++) {
                 ?>
 
                 <div class="item">
-                    <img class="owl-lazy" data-src="<?php echo HOST_NAME . 'upload/' . $photos[$i]['up_photo']; ?>" alt="4444" />
+                    <img class="owl-lazy" data-src="<?php echo HOST_NAME . 'upload/' . $photos[$i]['up_photo']; ?>" alt="no image" />
                 </div>
 
             <?php } ?>

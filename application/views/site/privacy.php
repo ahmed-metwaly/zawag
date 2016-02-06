@@ -15,7 +15,7 @@
                             <!-- new tap -->
                             <div class="panel-heading" role="tab" id="headingOne-3">
                                 <h4 class="panel-title">
-                                    سياسة الخصوصية
+                                    <?php echo $pagesTitle['mainPrivacy']; ?>
                                     <a role="button" data-toggle="collapse" data-parent="#accordion"  aria-expanded="true" aria-controls="collapseOne-3"></a>
                                 </h4>
                             </div>

@@ -16,7 +16,13 @@
                             <!-- new tap -->
                             <div class="panel-heading" role="tab" id="headingOne-3">
                                 <h4 class="panel-title">
-                                    <?php echo $page->p_title ?>
+                                    <?php
+                                        if(isset($_GET['lang']) && $_GET['lang'] == 'en') {
+                                             echo $page->p_title_en;
+                                        } else {
+                                             echo $page->p_title;
+                                        }
+                                    ?>
                                     <a role="button" data-toggle="collapse" data-parent="#accordion"
                                        aria-expanded="true" aria-controls="collapseOne-3"></a>
                                 </h4>
@@ -26,7 +32,13 @@
                                  aria-labelledby="headingOne-3">
                                 <div class="panel-body">
 
-                                    <?php echo $page->p_content; ?>
+                                    <?php
+                                     if(isset($_GET['lang']) && $_GET['lang'] == 'en') {
+                                         echo $page->p_content_en; 
+                                     } else {
+                                         echo $page->p_content; 
+                                     }
+                                    ?>
 
                                 </div>
                             </div>

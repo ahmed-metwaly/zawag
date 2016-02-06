@@ -32,8 +32,8 @@
 
     <section id="site" class="wow fadeIn  search-details">
     <div class="container text-center">
-        <h2> نتائج البحث عن الاعضاء
-            <p class="search-text">عدد نتائج البحث <span><?php echo $contResult; ?></span> , أنت في الصفحة <span> <?php echo $pageNumber; ?> من <?php echo $contPages; ?><span></p>
+        <h2> <?php echo $sittings['SearchTitle']; ?>
+            <p class="search-text"> <?php echo $sittings['Searchreresult']['result']; ?> <span><?php echo $contResult; ?></span> ,   <?php echo $sittings['Searchreresult']['page']; ?> <span> <?php echo $pageNumber; ?> <?php echo $sittings['Searchreresult']['to']; ?> <?php echo $contPages; ?><span></p>
         </h2>
 
         <?php
@@ -66,8 +66,8 @@
                 <ul class="list-unstyled details-per">
                     <li class="det-per"><i class="fa fa-user"></i><span> <?php echo $dataSearch[$i]['ur_name'] ?></span></li>
                     <li class="det-per"><i class="fa fa-user"></i><span> <?php echo $dataSearch[$i]['ur_age'] ?></span></li>
-                    <li class="det-per"><i class="fa fa-home"></i><span> <?php echo $dataSearch[$i]['ur_country'] ?></span></li>
-                    <li class="det-per"><i class="fa fa-map-marker"></i><span> <?php echo $dataSearch[$i]['ur_country_stay'] ?></span></li>
+                    <li class="det-per"><i class="fa fa-home"></i><span> <?php echo $contry[$dataSearch[$i]['ur_country']]; ?></span></li>
+                    <li class="det-per"><i class="fa fa-map-marker"></i><span> <?php echo $contry[$dataSearch[$i]['ur_country_stay']]; ?></span></li>
                     <div class="clearfix"></div>
                 </ul>
                 <div class="clearfix"></div>

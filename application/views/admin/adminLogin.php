@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title>Metronic | Login Options - Login Form 2</title>
+<title>تسجيل دخول</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -90,17 +90,6 @@ License: You must have a valid license purchased only from themeforest(the above
 			دخول <i class="m-icon-swapright m-icon-white"></i>
 			</button>
 		</div>
-	
-		<div class="forget-password">
-			<h4>نسيت كلمة المرور؟</h4>
-			<p>
-				 لا تقلق اضغط
-				<a href="javascript:;" id="forget-password">
-					 هنا
-				</a>
-				 لاعادة تعين كلمة المرور الخاصة بك
-				 </p>
-		</div>
 	<?php echo form_close(); ?>
 	<!-- END LOGIN FORM -->
 	<!-- BEGIN FORGOT PASSWORD FORM -->
@@ -130,9 +119,7 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 <!-- END LOGIN -->
 <!-- BEGIN COPYRIGHT -->
-<div class="copyright">
-	 2014 &copy; Metronic - Admin Dashboard Template.
-</div>
+
 <!-- END COPYRIGHT -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->

@@ -7,6 +7,11 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
 
 class DashBord extends CI_Controller {
 
@@ -17,7 +22,7 @@ class DashBord extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->load->library("pagination");
-       
+
         if($this->session->userdata('userIsL0gin') != '1') {
             redirect('/register/');
        }
@@ -25,7 +30,15 @@ class DashBord extends CI_Controller {
     }
 
     private function getHeaderUsers($type) {
-
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
         $this->db->select('ur_id');
         $this->db->select('ur_photo');
         $this->db->from('users_register');
@@ -41,6 +54,15 @@ class DashBord extends CI_Controller {
     }
 
     private function uaerAcountDone() {
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
         $this->db->select('ur_id');
         $this->db->from('users_register');
         $this->db->where('ur_id', $this->session->userdata('userId'));
@@ -76,6 +98,13 @@ class DashBord extends CI_Controller {
 
     public function index() {
 
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         // the plan time is finshed
         $acountInfo = $this->Dsw_model->getByCond('c_ur_id', $this->session->userdata('userid'), 'cart', 'row');
               
@@ -107,6 +136,13 @@ class DashBord extends CI_Controller {
 
 
     public function liks() {
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
 
         $id = $this->session->userdata('userId');
         // my likes
@@ -138,14 +174,22 @@ class DashBord extends CI_Controller {
 
 
     public function photos() {
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         $data['messageData'] = '';
         if(isset($_POST['upload']))
         {
             if($ret = $this->Dsw_model->uploadFile(UPLOAD_FILE,'png|jpg|jpeg|PNG', 10*1024)){
                 if($this->Dsw_model->add('users_photos', array('up_ur_id' => $this->session->userdata('userId'), 'up_photo' => $ret))){
-                     $data['messageData'] = 'تم اضافة الصوره بنجاح';
+                     $data['messageData'] = $validation['photoMessageTrue'];
                 } else {
-                    $data['messageData'] = 'خطأ فى الرفع حاول مره اخرى';
+                    $data['messageData'] = $validation['photoMessageFalse'];
                 }
             }
         }
@@ -153,7 +197,7 @@ class DashBord extends CI_Controller {
         // get photos
         $data['photos'] = $this->Dsw_model->getByCond('up_ur_id', $this->session->userdata('userId'), 'users_photos');
         $data['timeLine']   = $this->Dsw_model->timeLine();
-        $data['title'] = 'البوم الصور';
+        $data['title'] = $pagesTitle['DashBordPhotos'];
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['session'] = $this->session;
         $data['uri'] = $this->uri;
@@ -165,14 +209,19 @@ class DashBord extends CI_Controller {
 
     public function addStories() {
     	
-    	
+    	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
     	
         if(isset($_POST['hidden']) && $_POST['hidden'] != '') {
-            die('هذة العمليه غير متوفره :P');
+            die($validation['403']);
         }
-        $this->form_validation->set_rules('title', 'عنوان القصة', 'required');
-        $this->form_validation->set_rules('text','نص القصة', 'required');
-        $this->form_validation->set_rules('to','مع من قصتك', 'required');
+        $this->form_validation->set_rules('title', $validation['filedsStoryTitle'], 'required');
+        $this->form_validation->set_rules('text', $validation['filedsStoryText'], 'required');
+        $this->form_validation->set_rules('to', $validation['filedsStoryTo'], 'required');
         //$this->form_validation->set_rules('userfile',' صورة القصة ', 'required');
         $data['messageDone'] = '';
         $data['messageError'] = '';
@@ -190,12 +239,12 @@ class DashBord extends CI_Controller {
 
             if(!is_array($photo)){
                 if($this->Dsw_model->add('success_stories', $dataStories)){
-                    $data['messageDone'] = 'تم الاضافة بنجاح';
+                    $data['messageDone'] = $validation['messageStoriesTrue'];
                 } else {
-                    $data['messageError'] = 'غفوا حدث خطأ ما . يرجى اعاده المحاولة مره اخرى';
+                    $data['messageError'] = $validation['messageStoriesTrue'];
                 }
             } else {
-                $data['messageError'] = 'غفوا حدث خطأ ما . يرجى اعاده المحاولة مره اخرى';
+                $data['messageError'] = $validation['messageStoriesTrue'];
             }
         }
 
@@ -208,7 +257,7 @@ class DashBord extends CI_Controller {
         $this->db->join('users_register', 'users_register.ur_id = users_message.um_to_id');
         $this->db->group_by('ur_id');
         $toInfo = $this->db->get()->result_array();
-        $data['title'] = 'اضافة قصة';
+        $data['title'] = $pagesTitle['DashBordAddStories'];
         $data['toInfo'] = $toInfo;
         $data['timeLine']   = $this->Dsw_model->timeLine();
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
@@ -220,6 +269,14 @@ class DashBord extends CI_Controller {
     
     public function updateInfo() {
        
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         // get user data form 2 tables
         $this->db->select('*');
         $this->db->from('users_register');
@@ -230,20 +287,20 @@ class DashBord extends CI_Controller {
         $dataRegister = '';
 
         if(isset($_POST['registerData'])) {
-            $this->form_validation->set_rules('name','الاسم','trim|required|min_length[3]');
-            $this->form_validation->set_rules('gender','النوع','required');
+            $this->form_validation->set_rules('name', $validation['filedsName'],'trim|required|min_length[3]');
+            $this->form_validation->set_rules('gender', $validation['filedsGender'],'required');
             if($_POST['email'] != $userData->ur_email) {
-                $this->form_validation->set_rules('email','البريد الاكترونى','trim|required|min_length[5]valid_email|is_unique[users_register.ur_email]');
+                $this->form_validation->set_rules('email', $validation['filedsEmail'],'trim|required|min_length[5]valid_email|is_unique[users_register.ur_email]');
             }
             if(isset($_POST['password']) && $_POST['password'] != '') {
-                $this->form_validation->set_rules('password','كلمة المرور','trim|required|min_length[6]');
-                $this->form_validation->set_rules('repassword','تأكيد كلمة المرور','trim|required|matches[password]');
+                $this->form_validation->set_rules('password', $validation['filedsPass'],'trim|required|min_length[6]');
+                $this->form_validation->set_rules('repassword', $validation['filedsRePass'],'trim|required|matches[password]');
             }
 
-            $this->form_validation->set_rules('age','العمر','required');
-            $this->form_validation->set_rules('target','الهدف من التسجيل','required');
-            $this->form_validation->set_rules('country','دولة الاصل','required');
-            $this->form_validation->set_rules('country_stay','دولة الاقامة','required');
+            $this->form_validation->set_rules('age', $validation['filedsAge'],'required');
+            $this->form_validation->set_rules('target', $validation['filedsTarget'],'required');
+            $this->form_validation->set_rules('country', $validation['filedsCountry'],'required');
+            $this->form_validation->set_rules('country_stay', $validation['filedsCountryStay'],'required');
             //print_r($_POST);
             if($this->form_validation->run()) {
                 if($this->input->post('name') != $userData->ur_name) {
@@ -280,29 +337,16 @@ class DashBord extends CI_Controller {
                 
                 if(is_array($dataRegister) && !empty($dataRegister)) {
                     if($this->Dsw_model->edit('ur_id', $this->session->userdata('userId'), $dataRegister, 'users_register')){
-                        $data['success'] = 'تم التعيل بنجاح';
+                        $data['success'] = $validation['messageEditTrue'];
                     } else {
-                        $data['error'] = 'حدث خطأ ما يرجى اعاده المحاولة';
+                        $data['error'] = $validation['messageEditFalse'];
                     }
                 } 
             }
         } // end register
 
         if(isset($_POST['socialSituation'])) {
-            // $this->form_validation->set_rules('learn', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('work', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('work_field', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('monthly_income', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('physique', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('ready_move', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('skin_color', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('weight', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('height', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('family_status', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('want_children', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('physical_condition', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('health_status', 'هذه العمليه غير مسموح بها', 'required');
-            // $this->form_validation->set_rules('religious_commitmen', 'هذه العمليه غير مسموح بها', 'required');
+            
             $ataSituation = '';
             if($this->form_validation->run()){
                
@@ -368,9 +412,9 @@ class DashBord extends CI_Controller {
                 
                 if(is_array($ataSituation) && !empty($ataSituation)) {
                      if($this->Dsw_model->edit('us_ur_id', $this->session->userdata('userId'), $ataSituation, 'users_social_position')){
-                        $data['success'] = 'تم التعيل بنجاح';
+                        $data['success'] = $validation['messageEditTrue'];
                     } else {
-                        $data['error'] = 'حدث خطأ ما يرجى اعاده المحاولة';
+                        $data['error'] = $validation['messageEditFalse'];
                     }
                 }
             }
@@ -384,9 +428,9 @@ class DashBord extends CI_Controller {
               
                 if(isset($photo) && $photo != '' && !is_array($photo)) {
                     if($this->Dsw_model->edit('ur_id', $this->session->userdata('userId'), array('ur_photo' => $photo), 'users_register')) {
-                        $data['success'] = 'تم التعيل بنجاح';
+                        $data['success'] = $validation['messageEditTrue'];
                     } else {
-                        $data['error'] = 'حدث خطأ ما يرجى اعاده المحاولة';
+                        $data['error'] = $validation['messageEditFalse'];
                     }
                 }
             //}
@@ -409,9 +453,9 @@ class DashBord extends CI_Controller {
 
                 if(is_array($dataAbout) && !empty($dataAbout)) {
                      if($this->Dsw_model->edit('uab_ur_id', $this->session->userdata('userId'), $dataAbout, 'users_about')){
-                        $data['success'] = 'تم التعيل بنجاح';
+                        $data['success'] = $validation['messageEditTrue'];
                     } else {
-                        $data['error'] = 'حدث خطأ ما يرجى اعاده المحاولة';
+                        $data['error'] = $validation['messageEditFalse'];
                     }
                 }
             }
@@ -427,9 +471,9 @@ class DashBord extends CI_Controller {
               
                 if(isset($photo) && $photo != '') {
                     if($this->Dsw_model->add('users_photos', array('up_ur_id' => $this->session->userdata('userId'), 'up_photo' => $photo))) {
-                        $data['success'] = 'تم الاضافة بنجاح';
+                        $data['success'] = $validation['messageStoriesTrue'];
                     } else {
-                        $data['error'] = 'حدث خطأ ما يرجى اعاده المحاولة';
+                        $data['error'] = $validation['messageStoriesTrue'] ;
                     }
                 }
             // }
@@ -439,9 +483,9 @@ class DashBord extends CI_Controller {
             foreach ($_POST as $key => $value) {
                 if(is_int($key)) {
                     if($this->Dsw_model->remove('users_photos', $key, 'up_id')){
-                        $data['success'] = 'تم الحذف بنجاح';
+                        $data['success'] = $validation['messageDeleteTrue'];
                     } else {
-                        $data['error'] = 'لم يتم الحذف';
+                        $data['error'] = $validation['messageDeleteFalse'];
                     }
                 }
             }
@@ -450,7 +494,7 @@ class DashBord extends CI_Controller {
 
 
     	// get user photos
-        $data['title'] = 'تعديل الملف البيانات';
+        $data['title'] = $pagesTitle['DashBordUpdateInfo'];
         $data['userPhotos'] = $this->Dsw_model->getByCond('up_ur_id', $this->session->userdata('userId'), 'users_photos');
     	$data['userData'] = $userData; 
         $data['timeLine'] = $this->Dsw_model->timeLine();
@@ -462,7 +506,14 @@ class DashBord extends CI_Controller {
 
     public function cancel() {
 
-        $data['title'] = 'الغاء الطلب';
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        $data['title'] = $pagesTitle['DashBordCancel'];
         $data['timeLine'] = $this->Dsw_model->timeLine();
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['session']  = $this->session;
@@ -472,12 +523,13 @@ class DashBord extends CI_Controller {
 
     private function paypal_go($price, $id){
        
+       
         $config['business']             = 'majeed7180@hotmail.com';
         $config['cpp_header_image']     = ''; //'Image header url [750 pixels wide by 90 pixels high]';
         $config['return']               = base_url()."dashbord/addDone/$id";
         $config['cancel_return']        = base_url()."dashbord/cancel";
         $config['notify_url']           = base_url()."dashbord/paypal"; //IPN Post
-        $config['production']           = TRUE; //Its false by default and will use sandbox
+        $config['production']           = true; //Its false by default and will use sandbox
         //$config["invoice"]              = random_string('numeric',8); //The invoice id
         $config["custom"]               = $this->session->userdata('userId');
 
@@ -498,32 +550,40 @@ class DashBord extends CI_Controller {
 
     public function addDone() {
         
-
-        var_dump($this->input->post());
+            	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
 
         $planId = (int) $this->uri->segment(3);
         
         if($planId != null) {
             $planData = $this->Dsw_model->getByCond('pp_id', $planId, 'paypal_plan', 'row');
 
+
+
             $date = date("Y-m-d");
             $date = strtotime(date("Y-m-d", strtotime($date)) . " +$planData->pp_duration month");
             $date = date("Y-m-d",$date);
             
             $dataCart['c_ur_id'] = $this->session->userdata('userId');
-            $dataCart['c_pp_id'] = $planData->c_pp_id; 
+            $dataCart['c_pp_id'] = $planData->pp_id; 
             $dataCart['c_start'] = date('Y-m-d'); 
             $dataCart['c_end']   = $date; 
 
+
             if($this->Dsw_model->add('cart', $dataCart)) {
                 if($this->Dsw_model->edit('ur_id', $this->session->userdata('userId'), array('ur_acount_done' => '1'), 'users_register')){
-                    $data['success'] = 'تم الاشتراك بنجاح';
+                    $data['success'] = $validation['gessahePaypalTrue'];
                 }
             } else {
-                $data['error'] = 'لم يتم التسجيل بشكل صحيح . يرجى مراسلة الادارة فورا';
+                $data['error'] = $validation['gessahePaypalFalse'];
             }
         }
-        $data['title'] = 'نجاح الاشتراك';
+        $data['title'] = $pagesTitle['DashBordAddDone'];
         $data['timeLine'] = $this->Dsw_model->timeLine();
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['session']  = $this->session;
@@ -535,10 +595,19 @@ class DashBord extends CI_Controller {
     
     public function paypal() {
     	
-        $userData = $this->Dsw_model->getByCond('ur_id', $this->session->userdata('userId'), 'users_register', 'row');        
+            	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
         
-        if($userData->ur_acount_done == '1') {
-            $data['title'] = 'تفعيل الحساب';
+        $userData = $this->Dsw_model->getByCond('ur_id', $this->session->userdata('userId'), 'users_register', 'row');        
+         
+          
+         
+        if(@$userData->ur_acount_done == '1') {
+            $data['title'] = $pagesTitle['DashBordPaypal'];
             $data['planStatus'] = $this->Dsw_model->getByCond('c_ur_id', $this->session->userdata('userid'), 'cart', 'row');
             $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
             $data['session']  = $this->session;
@@ -553,12 +622,12 @@ class DashBord extends CI_Controller {
         if($planId != null) {
             
             $planData = $this->Dsw_model->getByCond('pp_id', $planId, 'paypal_plan', 'row');
-    
+  		
             $this->paypal_go($planData->pp_price, $planId);        
 
         }
         
-        $data['title'] = 'تفعيل الحساب';
+        $data['title'] = $pagesTitle['DashBordPaypal'];
         $data['plans']    = $this->Dsw_model->getAll('paypal_plan');
         $data['timeLine'] = $this->Dsw_model->timeLine();
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');

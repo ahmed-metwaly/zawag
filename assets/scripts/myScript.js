@@ -1,2 +1,3 @@
 $("[name='my-checkbox']").bootstrapSwitch();
 
+

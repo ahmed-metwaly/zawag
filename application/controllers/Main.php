@@ -7,9 +7,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 5:39 PM
  */
 
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
+
+
+
+
 class Main extends CI_Controller {
 
     public function __construct() {
+        
         parent::__construct();
         $this->load->model('Dsw_model');
         $this->load->model('Login_model');
@@ -17,6 +27,9 @@ class Main extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->helper('form');
         $this->load->library("pagination");
+        
+        
+
     }
 
 
@@ -32,6 +45,12 @@ class Main extends CI_Controller {
    }
 
     private function login() {
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
 
         $data['errorLogin'] = '';
 
@@ -39,8 +58,8 @@ class Main extends CI_Controller {
 
             //print_r($_POST);
 
-            $this->form_validation->set_rules('email', 'البريد الالكترونى', 'required' );
-            $this->form_validation->set_rules('password', 'كلمة المرور', 'required');
+            $this->form_validation->set_rules('email', $validation['filedsEmail'], 'required' );
+            $this->form_validation->set_rules('password', $validation['filedsPass'], 'required');
 
             if($this->form_validation->run()) {
                 $loginData['ur_email']    = $this->input->post('email');
@@ -49,7 +68,7 @@ class Main extends CI_Controller {
                 if($this->Login_model->loginUser($loginData)) {
                     redirect( HOST_NAME . 'dashbord/');
                 } else {
-                   return $data['errorLogin'] =  'خطأ فى البريد الالكترونى او كلمة المرور ';
+                   return $data['errorLogin'] =  $validation['loginError'];
                 }
             }
         }
@@ -57,7 +76,16 @@ class Main extends CI_Controller {
 
 
     public function index() {
-    	
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+
+
+
+
         if(isset($_POST['sendData'])) {
             $this->session->set_userdata($_POST);
             redirect(HOST_NAME . 'Register');
@@ -66,7 +94,7 @@ class Main extends CI_Controller {
         $data['users'] = $this->getUsers();
         $data['ads736'] = $this->Dsw_model->getByConLimit('ads', 'ads_size', 736, 1);
         $data['ads350'] = $this->Dsw_model->getByConLimit('ads', 'ads_size', 350, 1);
-	$data['title'] = 'مسلم زواج';
+	$data['title'] = $pagesTitle['mainIndex'];
         $data['errorLogin'] = $this->login();
         $data['siteFuture'] = $this->Dsw_model->getAll('site_features');
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
@@ -76,17 +104,23 @@ class Main extends CI_Controller {
 
 
     public function contact() {
-
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         if(isset($_POST['hidden']) && $_POST['hidden'] != '') {
-            die('هذه العمليه غير متاحة :P ');
+            die($validation['403']);
         }
         $this->login();
         $sittings = $this->Dsw_model->getAll('sittings', 'row');
 
-        $this->form_validation->set_rules('name', 'اسم الكريم', 'required');
-        $this->form_validation->set_rules('title', 'عنوان الرسالة', 'required');
-        $this->form_validation->set_rules('email', 'البريد الالكترونى', 'required|valid_email');
-        $this->form_validation->set_rules('message', 'نص الرسالة', 'required');
+        $this->form_validation->set_rules('name', $validation['filedsName'], 'required');
+        $this->form_validation->set_rules('title', $validation['filedsTilte'], 'required');
+        $this->form_validation->set_rules('email', $validation['filedsEmail'], 'required|valid_email');
+        $this->form_validation->set_rules('message', $validation['filedsMsg'], 'required');
         $data['messageSend'] = '';
 
         if(isset($_POST['sendMessage'])) {
@@ -99,18 +133,18 @@ class Main extends CI_Controller {
 
                 if ($this->Dsw_model->add('admin_message', $mailData)) {
                     if ($this->Dsw_model->sendMail($mailData['am_email'], $mailData['am_name'], $sittings->si_site_email, $mailData['am_title'], $mailData['am_message'])) {
-                        $data['messageSend'] = 'تم الارسال بنجاح سوف يتم الرد عليك قريبا';
+                        $data['messageSend'] = $validation['sendMessageTrue'];
                         echo '<meta http-equiv="refresh" content="2">';
                     } else {
-                        $data['messageSend'] = 'عفوا حدث خطأ ما لم يتم الارسال الى الاميل. حاول مرة اخرى';
+                        $data['messageSend'] = $validation['sendMessageFalse'];
                     }
                 } else {
-                    $data['messageSend'] = 'عفوا حدث خطأ ما لم يتم الارسال الى الاميل. حاول مرة اخرى';
+                    $data['messageSend'] = $validation['sendMessageFalse'];
                 }
 
             }
         }
-	$data['title'] = 'اتصل بنا';
+	$data['title'] = $pagesTitle['mainContact'];
         $data['errorLogin'] = $this->login();
         $data['siteInfo'] = $sittings;
         $data['uri'] = $this->uri;
@@ -122,6 +156,12 @@ class Main extends CI_Controller {
 
     public function stories() {
 
+                global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
 
         $this->load->library('pagination');
         $config['base_url']      = HOST_NAME . 'main/stories/';
@@ -161,7 +201,7 @@ class Main extends CI_Controller {
         $this->db->limit($config['per_page'], $start);
         $to = $this->db->get()->result_array();
 
-	$data['title'] = 'قصص النجاح';
+	$data['title'] = $pagesTitle['mainStories'];
         $data['pagination'] = $this->pagination->create_links();
         $data['allStories'] = $from;
         $data['to']         = $to;
@@ -175,6 +215,12 @@ class Main extends CI_Controller {
 
     public function viewStory() {
 
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
 
         $id = (int) $this->uri->segment(3);
 
@@ -211,7 +257,14 @@ class Main extends CI_Controller {
 
 
     public function faqs() {
-	$data['title'] = 'الاسئلة المكررة';
+	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        $data['title'] = $pagesTitle['mainFaqs'];
         $data['faqsData']   = $this->Dsw_model->getAll('faqs'); 
         $data['errorLogin'] = $this->login();
         $data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
@@ -223,7 +276,14 @@ class Main extends CI_Controller {
 
     
     public function warning() {
-    	$data['title'] = 'تحزيرات الامان';
+    	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        $data['title'] = $pagesTitle['mainWarning'];
     	$data['errorLogin'] = $this->login();
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;
@@ -233,7 +293,14 @@ class Main extends CI_Controller {
     }
     
     public function privacy() {
-    	$data['title'] = 'سياسة الخصوصية';
+    	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        $data['title'] = $pagesTitle['mainPrivacy'];
     	$data['errorLogin'] = $this->login();
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;
@@ -243,6 +310,14 @@ class Main extends CI_Controller {
     }
     
     public function pages() {
+
+            	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         $id = (int) $this->uri->segment(3);
 
 	$page =  $this->Dsw_model->getByCond('p_id', $id, 'pages','row');
@@ -261,7 +336,15 @@ class Main extends CI_Controller {
 
 
     public function terms() {
-    	$data['title'] = 'شروط الاستخدام';
+    	global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
+        $data['title'] = $pagesTitle['mainTerms'];
     	$data['errorLogin'] = $this->login();
     	$data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
     	$data['uri']        = $this->uri;

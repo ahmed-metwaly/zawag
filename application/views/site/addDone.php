@@ -3,7 +3,7 @@
 <div class="container paypal_data center-block">
 	<table class="table table-condensed">
 		<tr class="success">
-			<td class="text-center">تم الاشتراك بنجاح</td>
+			<td class="text-center"><?php echo $validation['gessahePaypalTrue']; ?></td>
 		</tr>
 	</table>
 </div>

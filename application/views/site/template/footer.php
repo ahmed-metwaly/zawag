@@ -1,5 +1,4 @@
 
-
 <section class="steps">
 
     <div class="container">
@@ -7,7 +6,7 @@
         <div class="col-2 col-md-2 col-sm-2 col-xs-6 step  wow  bounceInUp"  data-wow-duration=".5s" data-wow-delay="0.25s">
             <a href="<?php echo HOST_NAME . 'main/stories/' ?>">
                 <i class="fa fa-user"></i>
-                قصص نجاح
+                 <?php echo $sittings['footerHistory']; ?>
             </a>
         </div>
         <!-- step -->
@@ -15,7 +14,7 @@
         <div class="col-2 col-md-2 col-sm-2 col-xs-6 step  wow  bounceInUp"  data-wow-duration=".5s" data-wow-delay=".5s">
             <a href="<?php echo HOST_NAME . 'main/contact/'; ?>">
                 <i class="fa fa-phone"></i>
-                راسل الادارة
+                 <?php echo $sittings['footerMessage']; ?>
             </a>
         </div>
         <!-- step -->
@@ -23,7 +22,7 @@
         <div class="col-2 col-md-2 col-sm-2 col-xs-6 step  wow  bounceInUp"  data-wow-duration=".5s" data-wow-delay=".75s">
             <a href="<?php echo HOST_NAME . 'main/faqs/' ?>">
                 <i class="fa fa-question"></i>
-                اسئلة متداولة
+                 <?php echo $sittings['footerFaqs']; ?>
             </a>
         </div>
         <!-- step -->
@@ -31,7 +30,7 @@
         <div class="col-2 col-md-2 col-sm-2 col-xs-6 step  wow  bounceInUp"  data-wow-duration=".5s" data-wow-delay="1s">
             <a href="<?php echo HOST_NAME; ?>main/warning/">
                 <i class="fa fa-lock"></i>
-                تحذيرات الامان
+                 <?php echo $sittings['footerWarnings']; ?>
             </a>
         </div>
         <!-- step -->
@@ -39,7 +38,7 @@
         <div class="col-2 col-md-2 col-sm-2 col-xs-6 step  wow  bounceInUp"  data-wow-duration=".5s" data-wow-delay="1.25s">
             <a href="<?php echo HOST_NAME; ?>main/privacy/">
                 <i class="fa fa-bars"></i>
-                سياسة الخصوصية
+                 <?php echo $sittings['footerPrivcy']; ?>
             </a>
         </div>
         <!-- step -->
@@ -48,7 +47,7 @@
 
             <a href="<?php echo HOST_NAME; ?>main/terms/">
                 <i class="fa fa-folder"></i>
-                شروط الاستخدام
+                 <?php echo $sittings['footerTerms']; ?>
             </a>
         </div>
         <!-- step -->
@@ -59,7 +58,7 @@
 <footer class="wow fadeIn">
     <div class="container">
         <div class="col-lg-4 col-md-4 com-sm-4 col-xs-12 block">
-            <h4>نبذة عن الموقع</h4>
+            <h4><?php echo $sittings['footerBrief']; ?> </h4>
             <p><?php echo $siteInfo->si_about_the_site; ?></p>
         </div>
         <!-- col -->
@@ -69,7 +68,7 @@
         </div>
         <!-- col -->
         <div class="col-lg-3 col-md-3 com-sm-3 col-xs-12 block">
-            <h4> روابط مهمة</h4>
+            <h4> <?php echo $sittings['footerUrls']; ?></h4>
             <ul class="link">
 
             <?php 
@@ -94,7 +93,7 @@
 
 
         <div class="col-lg-3 col-md-3 com-sm-3 col-xs-12 block rights">
-            <h4> تواصل معا </h4>
+            <h4> <?php echo $sittings['footerContact']; ?> </h4>
             <ul class="social">
                 <li><a class="fa fa-facebook" href="<?php echo $siteInfo->si_facebook_url; ?>"></a></li>
                 <li><a class="fa fa-twitter" href="<?php echo $siteInfo->si_twitter_url; ?>"></a></li>
@@ -103,11 +102,11 @@
                 <li><a class="fa fa-youtube-play" href="<?php echo $siteInfo->si_yot_url; ?>"></a></li>
             </ul>
             <div class="clearfix"></div>
-            جميع الحقوق محفوظة ل موقع مسلم زواج 
+            <?php echo $sittings['footerCopy']; ?>
             <div class="clearfix"></div>
 
-            تصميم <a href="http://elryad.com" title="مؤسسة" target="_blank">مؤسسة</a>
-            <a href="http://elryad.com" title="الرياض" target="_blank">الرياض</a>
+            <?php echo $sittings['footerElryad']; ?>
+             
         </div>
         <!-- col -->
     </div>
@@ -244,6 +243,7 @@
 
     })(jQuery);
 
+$('.chat-room').animate({scrollTop: ($(window).scrollTop() + 9999999999999999999999999999999999999999) + 'px'}, 300);
 
 </script>
 
@@ -251,4 +251,3 @@
 </body>
 
 </html>
-

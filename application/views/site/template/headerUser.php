@@ -15,7 +15,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                            <p class="p-toggle">القائمة الرئيسية</p>
+                            <p class="p-toggle"><?php echo $sittings['manMenu']; ?></p>
                         </button>
                     </div>
 
@@ -25,15 +25,15 @@
 
                         <ul style="border:none;" class="ak wow my-nav pull-right  fadeInDown nav navbar-nav navbar-right col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
                             <li  class="<?php echo ($uri->segment(1) == 'dashbord' || $uri->segment(2) == 'index') ? 'active' : ''; ?>">
-                                <a href="<?php echo HOST_NAME . 'dashbord/' ?>"><i class="fa fa-home fa-lg ic-menu"></i>الرئيسية<span class="sr-only">(current)</span></a></li>
-                            <li class="<?php echo ($uri->segment(1) == 'messages') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'messages/' ?>"><i class="fa fa-comments fa-lg ic-menu"></i>رسائل</a></li>
-                            <li class="<?php echo ($uri->segment(2) == 'liks') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'dashbord/' ?>liks"><i class="fa fa-cog fa-lg ic-menu"></i>اعجاب</a></li>
-                            <li class="<?php echo ($uri->segment(2) == 'photos') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'dashbord/photos' ?>"><i class="fa fa-search fa-lg ic-menu"></i>البوم الصور</a></li>
+                                <a href="<?php echo HOST_NAME . 'dashbord/' ?>"><i class="fa fa-home fa-lg ic-menu"></i>><?php echo $sittings['menuHome']; ?><span class="sr-only">(current)</span></a></li>
+                            <li class="<?php echo ($uri->segment(1) == 'messages') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'messages/' ?>"><i class="fa fa-comments fa-lg ic-menu"></i>><?php echo $sittings['menuMessages']; ?></a></li>
+                            <li class="<?php echo ($uri->segment(2) == 'liks') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'dashbord/' ?>liks"><i class="fa fa-cog fa-lg ic-menu"></i><?php echo $sittings['menuLikes']; ?></a></li>
+                            <li class="<?php echo ($uri->segment(2) == 'photos') ? 'active' : '';?>"><a href="<?php echo HOST_NAME . 'dashbord/photos' ?>"><i class="fa fa-search fa-lg ic-menu"></i><?php echo $sittings['menuPhotosAlbome'];  ?></a></li>
 
                         </ul>
                         <ul class="wow fadeInDown user-drop col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">لوحة التحكم</a>
+                                <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $sittings['progressTitle']; ?></a>
 
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo $timeLine; ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $timeLine; ?>%">
@@ -43,15 +43,15 @@
                                 </div>
 
                                 <ul class="dropdown-menu dropdown-menu-user wow fadeInDown">
-                                    <li><a href="<?php echo HOST_NAME . 'profile/index/' . $session->userdata('userId'); ?>">الملف الشخصى</a></li>
+                                    <li><a href="<?php echo HOST_NAME . 'profile/index/' . $session->userdata('userId'); ?>"><?php echo $sittings['progressProfile']; ?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo HOST_NAME ?>dashbord/updateInfo/">تعديل الحساب</a></li>
+                                    <li><a href="<?php echo HOST_NAME ?>dashbord/updateInfo/"><?php echo $sittings['progressEditProfile']; ?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo HOST_NAME;?>dashbord/paypal/">ترقية الحساب</a></li>
+                                    <li><a href="<?php echo HOST_NAME;?>dashbord/paypal/"><?php echo $sittings['progressUpgradProfile']; ?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo HOST_NAME . 'dashbord/addStories/' ?>"> اضف قصة نجاح </a></li>
+                                    <li><a href="<?php echo HOST_NAME . 'dashbord/addStories/' ?>"><?php echo $sittings['progressAddStory']; ?></a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="<?php echo HOST_NAME . 'dashbord/' ?>logOut/">تسجيل خروج</a></li>
+                                    <li><a href="<?php echo HOST_NAME . 'dashbord/' ?>logOut/"><?php echo $sittings['progressLogOut']; ?></a></li>
 
                                 </ul>
                             </li>

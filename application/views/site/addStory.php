@@ -55,15 +55,15 @@
 
                 <div class="wow fadeInUp">
                     <h5 class="Suggestions">
-                        اضف قصة نجاحك مع شريك حياتك
+                        <?php echo $sittings['addStorryCapel']; ?>
                     </h5>
 
                     <form action="" method="post" class="new-form-con" enctype="multipart/form-data">
 
                         <div class="form-group">
-                            <label>مع من قصتك</label>
+                            <label><?php echo $validation['filedsStoryTo']; ?></label>
                             <select name="to" required="required" class="form-control">
-                                <option value="">-- يرجى الاختيار --</option>
+                                <option value="">--  <?php echo $sittings['pleasSelect']; ?> --</option>
                                 <?php
                                     for($i= 0; $i < count($toInfo); $i++) {
 
@@ -75,22 +75,22 @@
                         </div>
 
                         <div class="form-group">
-                            <label>عنوان القصة </label>
-                            <input type="text" required="required" name="title" class="form-control" placeholder="عنوان القصة ">
+                            <label><?php echo $sittings['storyTitle']; ?></label>
+                            <input type="text" required="required" name="title" class="form-control" placeholder="<?php echo $sittings['storyTitle']; ?>">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">صورة القصة</label>
+                            <label for="exampleInputFile"><?php echo $sittings['storyPhoto']; ?></label>
                             <input type="file" required="required" name="userfile" id="exampleInputFile">
-                            <p class="help-block">يمكنك رفع صوره معبره عن قصتك من خلال الضغط هنـــا .</p>
+                            <p class="help-block"><?php echo $sittings['storyPhotoDesc']; ?></p>
                         </div>
 
 
                         <div class="form-group">
-                            <label>محتوى القصة </label>
+                            <label><?php echo $sittings['storyContent']; ?></label>
                             <textarea name="text" required="required" class="form-control" rows="5"></textarea>
                         </div>
                         <input type="hidden" name="hidden">
-                        <button type="submit" class="btn btn-primary pull-left">اضافة القصة</button>
+                        <button type="submit" class="btn btn-primary pull-left"><?php echo $sittings['addStorry']; ?></button>
                     </form>
                 </div>
             </div>

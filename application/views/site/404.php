@@ -38,7 +38,11 @@
          <!--col-->
             <!--col-->
 
-           <div class=" wow fadeInDown col-lg-12 col-md-12 col-sm-8 col-xs-12">
+            <?php 
+            
+            if(!isset($_GET['lang']) && $_GET['lang'] == 'ar') {
+                ?>
+            <div class=" wow fadeInDown col-lg-12 col-md-12 col-sm-8 col-xs-12">
               <div class="block-per">
                    <div class="title-block-per">ترقية الحساب</div>
                    <div class="body-block-per">
@@ -49,6 +53,20 @@
                    <div class="clearfix"></div>
                </div>
            </div>
+            <?php } else {?>
+            <div class=" wow fadeInDown col-lg-12 col-md-12 col-sm-8 col-xs-12">
+              <div class="block-per">
+                   <div class="title-block-per">Account Upgrade</div>
+                   <div class="body-block-per">
+                    <h3>Upgrade your account now</h3>
+                    <p>Account must be upgraded in order to be able to chat</p>
+                   <a href="<?php echo HOST_NAME . 'dashbord/paypal/' ?>" class="btn btn-success btn-block col-lg-12">رقى حسابك الان</a>
+                   </div>
+                   <div class="clearfix"></div>
+               </div>
+           </div>
+            <?php } ?>
+           
            <!--col-->
         </div>
     </div>

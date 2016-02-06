@@ -1,5 +1,5 @@
 <?php
-if($session->userdata('userIsL0gin') == 1) {?>
+if($this->session->userdata('userIsL0gin') == 1) {?>
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
 
@@ -36,7 +36,6 @@ require_once 'headerUser.php';
 } else { ?>
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

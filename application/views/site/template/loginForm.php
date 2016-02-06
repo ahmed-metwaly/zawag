@@ -2,7 +2,7 @@
 <?php echo form_open(); ?>
 
     <div class="form-group col-lg-5 pull-right">
-        <input type="text" name="email" value="<?php echo @ $_POST['email'] ?>" class="form-control" placeholder="البريد الالكترونى">
+        <input type="text" name="email" value="<?php echo @ $_POST['email'] ?>" class="form-control" placeholder="<?php echo $validation['filedsEmail'] ; ?>">
         <div class="error"><?php echo form_error('email'); ?> </div>
     </div>
     <div class="form-group col-lg-5 pull-right">
@@ -11,6 +11,6 @@
 
     </div>
 
-    <button type="submit" name="user_login" class="btn  col-lg-2">دخول</button>
+    <button type="submit" name="user_login" class="btn  col-lg-2"><?php echo $sittings['loginButton']; ?></button>
     <div class="error col-lg-8 pull-right"><?php echo $errorLogin; ?></div>
 <?php echo form_close(); ?>

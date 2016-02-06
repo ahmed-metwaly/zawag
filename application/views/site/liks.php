@@ -40,7 +40,7 @@
 
                 <div class="col-md-6 col-xs-12 col-right">
                     <div class="new-right-section">
-                        <h3 class="new-title">أعجبت بى </h3>
+                        <h3 class="new-title"><?php echo $sittings['mylikesTitle']; ?> </h3>
                         <?php for($i = 0; $i < count($myLikes); $i++) { ?>
                         <div class="col-md-6 col-sm-6 col-xs-12 col-right"><!-- single-like -->
 
@@ -60,7 +60,7 @@
                                         ?>" alt=""/></a>
                                 </div>
                                 <h4><a href="<?php echo HOST_NAME; ?>profile/index/<?php echo $myLikes[$i]['ur_id']; ?>"><?php echo $myLikes[$i]['ur_name']; ?></a></h4>
-                                <span>  <?php echo $myLikes[$i]['ur_age']; ?> سنه</span>
+                                <span>  <?php echo $myLikes[$i]['ur_age']; ?> <?php echo $sittings['year']; ?></span>
                             </div>
 
                         </div><!-- end single-like -->
@@ -75,7 +75,7 @@
 
                 <div class="col-md-6 col-xs-12 col-left">
                     <div class="new-right-section">
-                        <h3 class="new-title">المعجبون بى </h3>
+                        <h3 class="new-title"><?php echo $sittings['contentOurMyTikes']; ?> </h3>
 
                         <?php for($i = 0; $i < count($ourLikes); $i++) { ?>
                             <div class="col-md-6 col-sm-6 col-xs-12 col-right"><!-- single-like -->
@@ -96,7 +96,7 @@
                                             ?>" alt=""/></a>
                                     </div>
                                     <h4><a href="<?php echo HOST_NAME; ?>profile/index/<?php echo $ourLikes[$i]['ur_id']; ?>"><?php echo $ourLikes[$i]['ur_name']; ?></a></h4>
-                                    <span>  <?php echo $ourLikes[$i]['ur_age']; ?> سنه</span>
+                                    <span>  <?php echo $ourLikes[$i]['ur_age']; ?> <?php echo $sittings['year']; ?></span>
                                 </div>
 
                             </div><!-- end single-like -->

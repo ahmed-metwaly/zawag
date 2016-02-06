@@ -160,10 +160,13 @@ class Dsw_model extends CI_Model {
 
         $userRegister = $this->Dsw_model->getByCond('ur_id', $this->session->userdata('userId'), 'users_register');
         $registerNum = array();
-        foreach($userRegister[0] as $key => $value) {
+        
+        if(is_array($userRegister)){
+            foreach($userRegister[0] as $key => $value) {
             if($value == null) {
                 $registerNum[$key] = $key;
             }
+        }
         }
 
         $userAbout = $this->Dsw_model->getByCond('uab_ur_id', $this->session->userdata('userId'), 'users_about', 'num_rows');

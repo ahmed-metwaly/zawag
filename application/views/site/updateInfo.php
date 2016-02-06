@@ -42,7 +42,7 @@
 
         <section id="site" class="wow fadeIn blocks">
             <div class="container">
-                <h2 class="register-title">تعيل الملف الشخصى
+                <h2 class="register-title">تعديل الملف الشخصى
                     <p class="register-text">عليك إتمام الخطوات التالية</p>
                 </h2>
                 <!-- col -->

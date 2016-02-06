@@ -17,37 +17,37 @@
 
                 <div class="wow fadeInUp">
                     <h5 class="Suggestions">
-                        يمكنك التواصل معنا في اي وقت في حال لديك اي استفسار او ملاحظات او شكاوي *
+                        <?php echo $sittings['contactTilte']; ?>
                     </h5>
                     <h5 class="error"><?php echo $messageSend; ?></h5>
 
                     <form action="" method="post" class="new-form-con">
 
                         <div class="form-group">
-                            <label>عنوان الرساله </label>
-                            <input type="text" name="title" class="form-control" value="<?php echo @ $_POST['title']; ?>" placeholder="عنوان الرساله ">
+                            <label><?php echo $sittings['contactTilteMessage']; ?></label>
+                            <input type="text" name="title" class="form-control" value="<?php echo @ $_POST['title']; ?>" placeholder="<?php echo $sittings['contactTilteMessage']; ?> ">
                             <div class="error"><?php echo form_error('title'); ?></div>
                         </div>
 
                         <div class="form-group">
-                            <label>اسمك الكريم</label>
-                            <input type="text" name="name" class="form-control" value="<?php echo @ $_POST['name']; ?>" placeholder="اسمك الكريم">
+                            <label><?php echo $sittings['contactNameMessage']; ?></label>
+                            <input type="text" name="name" class="form-control" value="<?php echo @ $_POST['name']; ?>" placeholder="<?php echo $sittings['contactNameMessage']; ?>">
                             <div class="error"><?php echo form_error('name'); ?></div>
                         </div>
 
                         <div class="form-group">
-                            <label>البريد الالكترونى</label>
-                            <input type="email" name="email" class="form-control" value="<?php echo @ $_POST['email']; ?>" placeholder="البريد الالكترونى">
+                            <label><?php echo $sittings['contactEmailMessage']; ?></label>
+                            <input type="email" name="email" class="form-control" value="<?php echo @ $_POST['email']; ?>" placeholder=" <?php echo $sittings['contactEmailMessage']; ?>">
                             <div class="error"><?php echo form_error('email'); ?></div>
                         </div>
 
                         <div class="form-group">
-                            <label>اكتب الرساله</label>
+                            <label><?php echo $sittings['contactMessage']; ?></label>
                             <textarea class="form-control" name="message" rows="5"><?php echo @ $_POST['message']; ?></textarea>
                             <div class="error"><?php echo form_error('message'); ?></div>
                         </div>
                         <input type="hidden" name="hidden">
-                        <button type="submit" name="sendMessage" class="btn btn-primary pull-left">ارســـال</button>
+                        <button type="submit" name="sendMessage" class="btn btn-primary pull-left"><?php echo $sittings['contactMessageSubmit'] ; ?></button>
                     </form>
                 </div>
             </div>

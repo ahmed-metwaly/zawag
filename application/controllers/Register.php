@@ -6,6 +6,13 @@
  * Time: 1:15 AM
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
+
 class Register extends CI_Controller {
 
 
@@ -24,14 +31,24 @@ class Register extends CI_Controller {
 
     private function login() {
 
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
+        
         $data['errorLogin'] = '';
 
         if(isset($_POST['user_login'])) {
 
             //print_r($_POST);
 
-            $this->form_validation->set_rules('email', 'البريد الالكترونى', 'required' );
-            $this->form_validation->set_rules('password', 'كلمة المرور', 'required');
+            $this->form_validation->set_rules('email', $validation['filedsEmail'], 'required' );
+            $this->form_validation->set_rules('password',$validation['filedsPass'] , 'required');
 
             if($this->form_validation->run()) {
                 $loginData['ur_email']    = $this->input->post('email');
@@ -40,7 +57,7 @@ class Register extends CI_Controller {
                 if($this->Login_model->loginUser($loginData)) {
                     redirect( HOST_NAME . '/dashbord/');
                 } else {
-                    return $data['errorLogin'] =  'خطأ فى البريد الالكترونى او كلمة المرور ';
+                    return $data['errorLogin'] = $validation['loginError'];
                 }
 
             }
@@ -53,6 +70,16 @@ class Register extends CI_Controller {
 
     public function index() {
 
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
+        
         if($this->session->userdata('userLogin') == '1') {
             redirect('dashboard');
         }
@@ -64,17 +91,17 @@ class Register extends CI_Controller {
 
         if(isset($_GET['action']) && $_GET['action'] == 'add'){
 
-            $this->form_validation->set_rules('name','الاسم','trim|required|min_length[3]');
-            $this->form_validation->set_rules('gender','النوع','required');
-            $this->form_validation->set_rules('email','البريد الاكترونى','trim|required|min_length[5]valid_email|is_unique[users_register.ur_email]');
-            $this->form_validation->set_rules('remail','تاكيد البريد الاكترونى','trim|required|min_length[5]|valid_email|matches[email]');
-            $this->form_validation->set_rules('password','كلمة المرور','trim|required|min_length[6]');
-            $this->form_validation->set_rules('repassword','تأكيد كلمة المرور','trim|required|matches[password]');
-            $this->form_validation->set_rules('age','العمر','required');
-            $this->form_validation->set_rules('target','الهدف من التسجيل','required');
-            $this->form_validation->set_rules('country','دولة الاصل','required');
-            $this->form_validation->set_rules('country_stay','دولة الاقامة','required');
-            $this->form_validation->set_rules('radio4e','الموافقه على الشروط','required');
+            $this->form_validation->set_rules('name', $validation['filedsName'],'trim|required|min_length[3]');
+            $this->form_validation->set_rules('gender', $validation['filedsGender'],'required');
+            $this->form_validation->set_rules('email', $validation['filedsEmail'],'trim|required|min_length[5]valid_email|is_unique[users_register.ur_email]');
+            $this->form_validation->set_rules('remail', $validation['filedsRemail'],'trim|required|min_length[5]|valid_email|matches[email]');
+            $this->form_validation->set_rules('password', $validation['filedsPass'],'trim|required|min_length[6]');
+            $this->form_validation->set_rules('repassword', $validation['filedsRemail'],'trim|required|matches[password]');
+            $this->form_validation->set_rules('age', $validation['filedsAge'],'required');
+            $this->form_validation->set_rules('target', $validation['filedsTarget'],'required');
+            $this->form_validation->set_rules('country', $validation['filedsCountry'],'required');
+            $this->form_validation->set_rules('country_stay', $validation['filedsCountryStay'],'required');
+            $this->form_validation->set_rules('radio4e', $validation['filedsRadio4e'],'required');
 
 
             if($this->form_validation->run()){
@@ -89,9 +116,9 @@ class Register extends CI_Controller {
                 $dataReg['ur_country_stay'] = $this->input->post('country_stay');
                 $dataReg['ur_ip']           = $_SERVER['REMOTE_ADDR'];;
                 $dataReg['ur_last_login']   = date('Y-m-d H:m:s');
-                $dataReg['ur_is_online']    = 1;
-                $dataReg['ur_is_active']    = 0;
-                $dataReg['ur_acount_done']  = 0;
+                $dataReg['ur_is_online']    = '1';
+                $dataReg['ur_is_active']    = '0';
+                $dataReg['ur_acount_done']  = '0';
                 $dataReg['ur_photo']        = '';
                 $dataReg['ur_level_id']     = 1;
                 $dataReg['ur_date']         = date('Y-m-d H:m:s');
@@ -138,20 +165,22 @@ class Register extends CI_Controller {
 
         if(isset($_GET['action']) && $_GET['action'] == 'dataSituation') {
 
-            $this->form_validation->set_rules('learn', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('work', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('work_field', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('monthly_income', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('physique', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('ready_move', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('skin_color', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('weight', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('height', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('family_status', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('want_children', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('physical_condition', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('health_status', 'هذه العمليه غير مسموح بها');
-            $this->form_validation->set_rules('religious_commitmen', 'هذه العمليه غير مسموح بها');
+            
+            
+            $this->form_validation->set_rules('learn', $validation['403']);
+            $this->form_validation->set_rules('work', $validation['403']);
+            $this->form_validation->set_rules('work_field', $validation['403']);
+            $this->form_validation->set_rules('monthly_income', $validation['403']);
+            $this->form_validation->set_rules('physique', $validation['403']);
+            $this->form_validation->set_rules('ready_move', $validation['403']);
+            $this->form_validation->set_rules('skin_color', $validation['403']);
+            $this->form_validation->set_rules('weight', $validation['403']);
+            $this->form_validation->set_rules('height', $validation['403']);
+            $this->form_validation->set_rules('family_status', $validation['403']);
+            $this->form_validation->set_rules('want_children', $validation['403']);
+            $this->form_validation->set_rules('physical_condition', $validation['403']);
+            $this->form_validation->set_rules('health_status', $validation['403']);
+            $this->form_validation->set_rules('religious_commitmen', $validation['403']);
 
             //if($this->form_validation->run()) {
 
@@ -195,8 +224,8 @@ class Register extends CI_Controller {
 
 
         if(isset($_POST['abut'])) {
-            $this->form_validation->set_rules('about_search', 'اللذين تبحث عنهم', 'min_length[15]');
-            $this->form_validation->set_rules('myself', 'تحدث عن نفسك', 'min_length[15]');
+            $this->form_validation->set_rules('about_search', $validation['filedsAboutSearch'], 'min_length[15]');
+            $this->form_validation->set_rules('myself', $validation['filedsMyself'], 'min_length[15]');
             if($this->form_validation->run()) {
                 $dataAbout['uab_ur_id'] = $this->session->userdata('userId');
                 $dataAbout['uab_myself'] = $this->input->post('myself');
@@ -215,7 +244,7 @@ class Register extends CI_Controller {
 
          }
 
-	$data['title'] = 'الاشتراك';
+	$data['title'] = $pagesTitle['RegisterIndex'] ;
         $data['session']  = $this->session;
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['uri']      = $this->uri;
@@ -226,24 +255,35 @@ class Register extends CI_Controller {
 
     public function activeEmail() {
 
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
+        
         $this->db->select('si_site_email');
         $this->db->from('sittings');
         $this->db->where('si_id', '1');
         $emil = $this->db->get()->row();
-        
+        $data['message'] = '';
         if($this->session->userdata('userEmail') != null) {
-            if($this->Register_model->sendActivation($emil->si_site_email, $this->session->userdata('userEmail'), $this->session->userdata('userName'))){
-                $data['message'] = 'تفقد بريدك الالكترونى';
+           if($this->Register_model->sendActivation($emil->si_site_email, $this->session->userdata('userEmail'), $this->session->userdata('userName'))){
+                $data['message'] = $validation['emailMessageTrue'];
+            } else {
+            	$data['message'] = $validation['emailMessageFalse'];
             }
-            
         } else {
-            $data['message'] = 'تم انتهاء الجلسه. يرجى المحاولة مره اخرى';
+            $data['message'] = $validation['emailFildSession'];
         }
 
         
        
         $this->session->set_userdata(array('userIsL0gin' => '1'));
-        $data['title'] = 'تفعيل الاميل';
+        $data['title'] = $pagesTitle['RegisterActiveEmail'];
         $data['session']  = $this->session;
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['uri']      = $this->uri;
@@ -254,6 +294,16 @@ class Register extends CI_Controller {
 
     public function validateActive() {
 
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
+        
+        
         if($this->session->userdata('emailActive') != null) {
            
             $data['session']  = $this->session;
@@ -263,21 +313,24 @@ class Register extends CI_Controller {
 
             if($this->Register_model->activationTrue()) {
                 $this->session->set_userdata(array('userIsL0gin' => '1'));  
-                $data['message'] = 'تم التفعيل بنجاح';
-                $data['title'] = 'تم التفعيل بنجاح';
-                if(!$this->Dsw_model->edit('users_register', array('ur_is_active' => '1'))) {
-                    echo '<script>alert("لم يتم التفعيل. يرجى مراسلة الادارة");</script>';
+                $data['message'] = $validation['resultEmailTrue'];
+                $data['title'] = $pagesTitle['RegisterValidateActivetrue'];
+                
+                //$idCol, $idVal, $data = array(), $tableName
+                
+                if(!$this->Dsw_model->edit('ur_id', $this->session->userdata('userId'), array('ur_is_active' => '1'), 'users_register')) {
+                    echo '<script>alert(' . $validation['gessahePaypalFalse'] . ');</script>';
                 }
                
                 $this->load->view('site/validateActiveTrue', $data);
             } else {
-            $data['title'] = 'لم يتم التفعيل';
-                $data['message'] = 'خطأ لم يتم التفعيل. برجاى المحاولة مره اخرى';
+            $data['title'] = $pagesTitle['RegisterValidateActivefalse'];
+                $data['message'] = $falseValidation;
                 $this->load->view('site/validateActiveFalse', $data);
             }
         } else {
-         $data['title'] =  'انتهت الجلسه';
-              $data['message'] = 'لقد انتهت الجلسه الخاصه بك';
+         $data['title'] = $exSession ;
+              $data['message'] = $validation['emailFildSession'];
             $this->load->view('site/validateActiveFalse', $data);
         }
 

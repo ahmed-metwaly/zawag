@@ -54,7 +54,7 @@ class Admin extends CI_Controller {
 
         $data['countUsersMale'] = $this->Dsw_model->getCount('select ur_id from users_register where ur_gender = "0"');
         $data['countUsersWomen'] = $this->Dsw_model->getCount('select ur_id from users_register where ur_gender = "1"');
-        $data['countUsersActive'] = $this->Dsw_model->getCount('select ur_id from users_register where ur_acount_done = 1');
+        $data['countUsersActive'] = $this->Dsw_model->getCount('select ur_id from users_register where ur_acount_done = "1"');
 
         $data['Admin'] = 'الرئيسة';
         $data['pageTitle'] = 'أحصائيات الموقع ';
@@ -85,7 +85,8 @@ class Admin extends CI_Controller {
         // update data
         if(isset($_POST['save'])) {
 
-            $this->form_validation->set_rules('site_name', 'اسم الموقع مطلوب', 'required|trim');
+            $this->form_validation->set_rules('site_name', 'اسم الموقع مطلوب عربى', 'required|trim');
+            $this->form_validation->set_rules('site_name_en', 'اسم الموقع مطلوب انجليزى', 'required|trim');
             $this->form_validation->set_rules('site_email', 'اميل الموقع مطلوب', 'required|trim|valid_email');
             $this->form_validation->set_rules('site_url', 'رابط الموقع مطلوب', 'required|trim');
             $this->form_validation->set_rules('site_blog_url', 'رابط المدونة مطلوب', 'required|trim');
@@ -95,13 +96,16 @@ class Admin extends CI_Controller {
             $this->form_validation->set_rules('rss_url', 'رابط rss مطلوب', 'required|trim');
             $this->form_validation->set_rules('inst_url', 'رابط انستجرام مطلوب', 'required|trim');
             $this->form_validation->set_rules('yot_url', 'رابط اليوتيوب مطلوب', 'required|trim');
-            $this->form_validation->set_rules('welcome_messag', 'رسالة الترحيب مطلوبة', 'required');
-            $this->form_validation->set_rules('about_the_site', 'نبذه عن الموقع مطلوبه', 'required');
-            $this->form_validation->set_rules('terms_service', 'شروط الاستخدام مطلوبه', 'required');
-            $this->form_validation->set_rules('tips_and_suggestions', 'نصائح واقتراحات مطلوبة', 'required');
-            $this->form_validation->set_rules('privacy_policy', 'سياسه الخصوصية مطلوبة', 'required');
-            $this->form_validation->set_rules('important_links', 'روابط مهمة مطلوية', 'required');
-
+            $this->form_validation->set_rules('welcome_messag', 'رسالة الترحيب مطلوبة عريى', 'required');
+            $this->form_validation->set_rules('welcome_messag_en', 'رسالة الترحيب مطلوبة انجليزى', 'required');
+            $this->form_validation->set_rules('about_the_site', 'نبذه عن الموقع مطلوبه عربى', 'required');
+            $this->form_validation->set_rules('about_the_site_en', 'نبذه عن الموقع مطلوبه انجليزى', 'required');
+            $this->form_validation->set_rules('terms_service', 'شروط الاستخدام مطلوبه عربى', 'required');
+            $this->form_validation->set_rules('terms_service_en', 'شروط الاستخدام مطلوبه عربى', 'required');
+            $this->form_validation->set_rules('tips_and_suggestions', 'نصائح واقتراحات مطلوبةعربى', 'required');
+            $this->form_validation->set_rules('tips_and_suggestions_en', 'نصائح واقتراحات مطلوبة انجليزى', 'required');
+            $this->form_validation->set_rules('privacy_policy', 'سياسه الخصوصية مطلوبة عربى', 'required');
+            $this->form_validation->set_rules('privacy_policy_en', 'سياسه الخصوصية مطلوبةانجليزى', 'required');
 
             if($this->form_validation->run()){
 
@@ -160,10 +164,15 @@ class Admin extends CI_Controller {
     	$this->form_validation->set_rules('question', 'السؤال', 'required');
     	$this->form_validation->set_rules('answer', 'الاجابة', 'required');
     	
+        $this->form_validation->set_rules('question_en', 'السؤال انجليزى', 'required');
+    	$this->form_validation->set_rules('answer_en', 'الاجابة انجليزى', 'required');
+        
     	if($this->form_validation->run()) {
     		$dataFaq['f_ur_id']    = $this->session->userdata('adminId');
     		$dataFaq['f_question'] = $this->input->post('question');
     		$dataFaq['f_answer']   = $this->input->post('answer');
+                $dataFaq['f_question_en'] = $this->input->post('question_en');
+    		$dataFaq['f_answer_en']   = $this->input->post('answer_en');
     		
     		if($this->Dsw_model->add('faqs', $dataFaq)) {
     			$data['success'] = 'تم الاضافة بنجاح';
@@ -209,7 +218,7 @@ class Admin extends CI_Controller {
     	// delete by id
     	$id = (int) $this->uri->segment(3);
     	if(isset($id) && is_int($id) && isset($_GET['action']) && $_GET['action'] == 'delete') {
-    		if($this->Dsw_model->remove('faqs', $id, 'ur_id')) {
+    		if($this->Dsw_model->remove('faqs', $id, 'f_id')) {
     			$data['success'] =  "تم الحذف بنجاح";
     		} else {
     			$data['error']   = "عفوا, لم يتم الخذف حاول مره اخرى";
@@ -1010,14 +1019,23 @@ class Admin extends CI_Controller {
 
             $photo = $this->Dsw_model->uploadFile(UPLOAD_FILE, 'png|jpg|gif|jpeg', 1024*10);
 
-            $this->form_validation->set_rules('p_name', 'اسم الصفه مطلوب', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('p_title', 'عنوان الصفه مطلوب', 'required|trim|xss_clean');
-            $this->form_validation->set_rules('p_content', 'محتوى الصفة مطلوب', 'required');
+            $this->form_validation->set_rules('p_name', 'اسم الصفه مطلوب عريى', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('p_title', 'عنوان الصفه مطلوب عريى', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('p_content', 'محتوى الصفة مطلوب عريى', 'required');
+            
+            $this->form_validation->set_rules('p_name_en', 'اسم الصفه مطلوب انجليزى', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('p_title_en', 'عنوان الصفه مطلوب انجليزى', 'required|trim|xss_clean');
+            $this->form_validation->set_rules('p_content_en', 'محتوى الصفة مطلوب انجليزى', 'required');
+            
             $this->form_validation->set_rules('p_section_id', 'القسم مطلوب', 'required');
 
             $dataAdd['p_name']       =  $this->input->post('p_name');
             $dataAdd['p_title']      =  $this->input->post('p_title');
             $dataAdd['p_content']    = $this->input->post('p_content');
+            
+            $dataAdd['p_name_en']       =  $this->input->post('p_name_en');
+            $dataAdd['p_title_en']      =  $this->input->post('p_title_en');
+            $dataAdd['p_content_en']    = $this->input->post('p_content_en');
             $dataAdd['p_photo']      = '';
             $dataAdd['p_section_id'] = $this->input->post('p_section_id');
             $dataAdd['p_created_by'] = $this->session->userdata('adminId');;
@@ -1029,8 +1047,8 @@ class Admin extends CI_Controller {
             }
 
         }
+        
         $data['sections'] = $this->Dsw_model->getAll('sections');
-
         $data['addPage'] = 'اضافة صفحه جديدة';
         $data['pageTitle'] = 'صفحة جديدة';
         $data['uri'] = $this->uri;
@@ -1521,6 +1539,8 @@ class Admin extends CI_Controller {
 
             $dataAdd['sf_title']        = $this->input->post('sf_title');
             $dataAdd['sf_text']        = $this->input->post('sf_text');
+            $dataAdd['sf_title_en']        = $this->input->post('sf_title_en');
+            $dataAdd['sf_text_en']        = $this->input->post('sf_text_en');
             $dataAdd['sf_photo']      = $photo;
             $dataAdd['sf_ceated_by']   = $this->session->userdata('adminId');;
 
@@ -1639,7 +1659,8 @@ class Admin extends CI_Controller {
 
             $photo = $this->Dsw_model->uploadFile(UPLOAD_FILE, 'png|jpg|gif|jpeg', 1024*10);
 
-            $this->form_validation->set_rules('name', 'اسم الخطة', 'required|trim');
+            $this->form_validation->set_rules('name', 'اسم الخطة عربى', 'required|trim');
+            $this->form_validation->set_rules('name_en', 'اسم الخطة انجليزى', 'required|trim');
             $this->form_validation->set_rules('duration', 'زمن الخطة', 'required');
             $this->form_validation->set_rules('price', 'سعر الخطة', 'required|trim');
 
@@ -1647,6 +1668,7 @@ class Admin extends CI_Controller {
 
                 $dataAdd['pp_ur_id']     = $this->session->userdata('adminId');;
                 $dataAdd['pp_name']      = $this->input->post('name');
+                $dataAdd['pp_name_en']   = $this->input->post('name_en');
                 $dataAdd['pp_duration']  = $this->input->post('duration');
                 $dataAdd['pp_price']     = $this->input->post('price');
                 
@@ -1764,8 +1786,8 @@ class Admin extends CI_Controller {
 
         $this->db->select('*');
         $this->db->from('cart');
-        $this->db->join('users_register', 'users_register.ur_id = cart.c_ur_id');
-        $this->db->join('paypal_plan', 'paypal_plan.pp_ur_id = users_register.ur_id');
+        $this->db->join('users_register', 'users_register.ur_id = cart.c_ur_id', 'left');
+        $this->db->join('paypal_plan', 'paypal_plan.pp_ur_id = users_register.ur_id', 'left');
         $data['paypalData']     = $this->db->get()->result_array();
         $data['editPaypalPlan'] = 'احصائيات الدفع';
         $data['pageTitle'] = 'احصائيات الدفع';

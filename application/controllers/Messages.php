@@ -8,6 +8,13 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
+
 class Messages extends CI_Controller {
 
     public function __construct() {
@@ -24,7 +31,13 @@ class Messages extends CI_Controller {
     }
 
     public function sendMessage() {
-
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         if (isset($_GET['action']) && $_GET['action'] == 'add_message') {
 
             $messageData['um_from_id'] = $this->session->userdata('userId');
@@ -32,7 +45,7 @@ class Messages extends CI_Controller {
             $messageData['um_text'] = $_POST['text'];
 
             if (!$this->Dsw_model->add('users_message', $messageData)) {
-                echo 'تعزر ارسال الرسالة';
+                echo $validation['chatFalse'];
             }
             die();
         }
@@ -40,6 +53,13 @@ class Messages extends CI_Controller {
 
     public function getSideMessage() {
 
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         if (isset($_GET['action']) && $_GET['action'] == 'get_new') {
 
             $id = $this->session->userdata('userId');
@@ -168,7 +188,13 @@ class Messages extends CI_Controller {
     }
 
     public function chatAjax() {
-
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         $data['audio'] = $this->sendMessage();
         $data['messageContent'] = $this->getMessageContent();
         $data['asideUsers'] = $this->getSideMessage();
@@ -178,6 +204,12 @@ class Messages extends CI_Controller {
 
     public function index() {
 
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
 
         $this->db->select('ur_acount_done');
         $this->db->from('users_register');
@@ -187,7 +219,7 @@ class Messages extends CI_Controller {
         $data['siteInfo'] = $this->Dsw_model->getAll('sittings', 'row');
         $data['session'] = $this->session;
         $data['uri'] = $this->uri;
-        $data['title'] = 'الرسائل';
+        $data['title'] = $pagesTitle['MessagesIndex'];
         if($user->ur_acount_done == '1') {
             $this->load->view('site/template/pagesHeader', $data);
             $this->chatAjax();

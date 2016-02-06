@@ -7,6 +7,13 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
+
+
 class Search extends CI_Controller {
     public function __construct() {
         parent::__construct();
@@ -25,6 +32,14 @@ class Search extends CI_Controller {
 
     public function index() {
 
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         if($this->session->userdata('userIsL0gin') != 1) {
             redirect('/register/');
         }
@@ -152,7 +167,7 @@ class Search extends CI_Controller {
         $data['siteInfo']   = $this->Dsw_model->getAll('sittings', 'row');
         $data['uri']        = $this->uri;
         $data['session']    = $this->session;
-        $data['title'] = 'بحث';
+        $data['title'] = $pagesTitle['SearchIndex'];
         $this->load->view('site/search', $data);
     }
 

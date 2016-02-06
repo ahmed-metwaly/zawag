@@ -7,6 +7,12 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$pase = $_SERVER['SCRIPT_FILENAME'];
+
+$dirName = dirname($pase);
+
+require_once $dirName . '/application/language/lang.php';
+
 class Profile extends CI_Controller {
 
     public function __construct() {
@@ -29,9 +35,17 @@ class Profile extends CI_Controller {
 
 
     private function sendMessage() {
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         $id = (int) $this->uri->segment(3);
         if(isset($_POST['sendMessage'])) {
-            $this->form_validation->set_rules('text', 'ادخل نص الرسالة', 'required|trim');
+            $this->form_validation->set_rules('text', $validation['filedsProfileText'], 'required|trim');
 
             if($this->form_validation->run()) {
                 if(isset($id) && $id != '') {
@@ -50,6 +64,14 @@ class Profile extends CI_Controller {
     }
 
     public function index() {
+        
+        global $sittings;
+        global $validation;
+        global $pagesTitle;
+        global $contry;
+        global $target;
+        global $exSession;
+        
         if($this->session->userdata('userIsL0gin') != 1) {
             redirect('/register/');
         }

@@ -83,16 +83,16 @@ if($messageData != '') {
 
                 <div class="wow fadeInUp AddNewPhoto">
                     <h5 class="Suggestions">
-                        ارفق صور الى البوم صورك
+                        <?php echo $sittings['photosTitle']; ?>
                     </h5>
                     <form action="" method="post" class="new-form-con" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="exampleInputFile">اضافة صوره </label>
+                            <label for="exampleInputFile"> <?php echo $sittings['photosLabol']; ?> </label>
                             <input type="file" name="userfile" required id="exampleInputFile">
 
 <!--                            <p class="help-block">يمكنك رفع صورة معبره عنك </p>-->
                         </div>
-                        <button type="submit" name="upload" class="btn btn-primary pull-left">اضافة الى الالبوم</button>
+                        <button type="submit" name="upload" class="btn btn-primary pull-left"><?php echo $sittings['photosSubmit']; ?></button>
                     </form>
                 </div>
             </div>
@@ -110,7 +110,7 @@ if($messageData != '') {
 
 <section class="users wow fadeInUp">
     <div class="container">
-        <h2>البوم الصور</h2>
+        <h2> <?php echo $sittings['photosTitleAlbom']; ?> </h2>
         <div class="user-area">
             <?php
                 for($i = 0; $i < count($photos); $i++) {
